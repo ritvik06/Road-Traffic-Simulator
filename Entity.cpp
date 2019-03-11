@@ -84,7 +84,7 @@ class Screen
         size = make_tuple(length, breadth);
         screen = new int[length][breadth];
     }
-}
+};
 int main()
 {
     exit(0);
