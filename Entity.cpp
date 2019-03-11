@@ -6,6 +6,7 @@
 #include<stdexcept>
 #include<chrono>
 #include<cstdlib>
+#include<tuple>
 
 using namespace std;
 class Entity
@@ -70,22 +71,8 @@ class Entity
          }
      }
 
-
-}
-
-class Screen
-{
-    private:
-    tuple<int, int> size;
-    char[][] screen;
-    
-    Screen(int length, int breadth)
-    {
-        size = make_tuple(length, breadth);
-        screen = new int[length][breadth];
-    }
-}
+};
 int main()
 {
-    exit(0);
+    return 0;
 }
