@@ -17,7 +17,8 @@ class Entity
      tuple<int, int> velocity;
      tuple<int, int> acceleration;
      tuple<int, int> dimensions;
-    
+     string name; 
+ 
     public:
      bool stationary()
      {
@@ -42,13 +43,18 @@ class Entity
      {
          return dimensions;
      }
+     string getName()
+     {
+	 return name;
+     }		
 
-     Entity(int length, int breadth, int Vx , int Vy, int x, int y, int Ax, int Ay, char sym)
+     Entity(int length, int breadth, int Vx , int Vy, int x, int y, int Ax, int Ay, char sym, string veh_name)
      {
          coordinates = make_tuple(x,y);
          velocity = make_tuple(Vx,Vy);
          dimensions = make_tuple(length, breadth);
          symbol = sym;
+	 name = veh_name;
      }
 
      void moveByStep(int t)
