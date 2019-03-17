@@ -12,73 +12,39 @@ using namespace std;
 class Entity
 {
     private:
-     char symbol;
      tuple<int, int> coordinates;
-     tuple<int, int> velocity;
-     tuple<int, int> acceleration;
      tuple<int, int> dimensions;
-     string name; 
- 
+    
     public:
-     bool stationary()
-     {
-         return(velocity==make_tuple(0,0));
-     }
+     char symbol;
      
+     Entity(int length, int breadth, int x, int y, char sym)
+     {
+         coordinates = make_tuple(x,y);
+         dimensions = make_tuple(length, breadth);
+         symbol = sym;
+     }
+
      tuple<int,int> getLocation()
      {
          return coordinates;
      }
 
-     tuple<int,int> getVelocity()
-     {
-         return velocity;
-     }
-    
-     tuple<int,int> getAcceleration()
-     {
-         return acceleration;
-     }
+     
      tuple<int,int> getDimensions()
      {
          return dimensions;
      }
-     string getName()
-     {
-	 return name;
-     }		
 
-     Entity(int length, int breadth, int Vx , int Vy, int x, int y, int Ax, int Ay, char sym, string veh_name)
+     void setLocation(tuple<int,int> location)
      {
-         coordinates = make_tuple(x,y);
-         velocity = make_tuple(Vx,Vy);
-         dimensions = make_tuple(length, breadth);
-         symbol = sym;
-	 name = veh_name;
+         coordinates = location;
      }
 
-     void moveByStep(int t)
+     
+     void setDimensions(tuple<int,int> size)
      {
-         int x , y, Vx, Vy, Ax, Ay; 
-         tie(x,y) = coordinates;
-         tie(Vx,Vy) = velocity;
-         tie(Ax,Ay) = acceleration;
-         coordinates = make_tuple(x+Vx*t+Ax*t*t/2,y+Vy*t+Ay*t*t/2);
-         velocity = make_tuple(Vx+Ax*t, Vy+Ay*t);
-     }
-
-     void move(int framelength, int time)
-     {
-         int N = time/framelength;
-         while(N>0)
-         {
-             moveByStep(framelength);
-             N--;
-         }
+         dimensions = size;
      }
 
 };
-int main()
-{
-    return 0;
-}
