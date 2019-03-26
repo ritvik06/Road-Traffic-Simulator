@@ -78,22 +78,22 @@ class Screen
         cleanScreen();
         int height, width;
         tie(height,width) = size;
-        int position = signal.getLocation();
+        int position = (int)round(signal.getLocation());
         for(int i =0; i < width;i++)
         {
             screen.at(i).at(position) = signal.symbol();
         }
         for (int i = 0; i != vehicles_on_screen.size(); i++)
         {
-            int x,y,l,b;
+            double x,y,l,b;
             bool stop = false;
             Vehicle curr = vehicles_on_screen[i];
             tie(x,y) = curr.getLocation();
             tie(l,b) = curr.getDimensions();
-            for(int k = x; k< x+l;k++)
+            for(int k = (int)round(x); k< x+l;k++)
             {
                 if(k>=height || k<0) break;
-                for(int j = y; j< y+b;j++)
+                for(int j = (int)round(y); j< y+b;j++)
                 {
                     if(j>=width|| j<0) break;
                     if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == 'X' || screen.at(j).at(k) == '=')

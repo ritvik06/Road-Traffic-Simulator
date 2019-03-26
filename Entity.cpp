@@ -12,37 +12,37 @@ using namespace std;
 class Entity
 {
     private:
-     tuple<int, int> coordinates;
-     tuple<int, int> dimensions;
+     tuple<double, double> coordinates;
+     tuple<double, double> dimensions;
     
     public:
      char symbol;
      
-     Entity(int length, int breadth, int x, int y, char sym)
+     Entity(double length, double breadth, double x, double y, char sym)
      {
          coordinates = make_tuple(x,y);
          dimensions = make_tuple(length, breadth);
          symbol = sym;
      }
 
-     tuple<int,int> getLocation()
+     tuple<double,double> getLocation()
      {
          return coordinates;
      }
 
      
-     tuple<int,int> getDimensions()
+     tuple<double,double> getDimensions()
      {
          return dimensions;
      }
 
-     void setLocation(tuple<int,int> location)
+     void setLocation(tuple<double,double> location)
      {
          coordinates = location;
      }
 
      
-     void setDimensions(tuple<int,int> size)
+     void setDimensions(tuple<double,double> size)
      {
          dimensions = size;
      }

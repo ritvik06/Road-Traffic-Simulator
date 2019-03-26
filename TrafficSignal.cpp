@@ -14,9 +14,9 @@ class TrafficSignal
     
     private:
     string SIGNAL = "RED";
-    int position;
+    double position;
     public:
-    TrafficSignal(int pos)
+    TrafficSignal(double pos)
     {   
         position = pos;
     }
@@ -41,7 +41,7 @@ class TrafficSignal
          else SIGNAL = "RED";
      }
 
-     int getLocation()
+     double getLocation()
      {
          return position;
      }

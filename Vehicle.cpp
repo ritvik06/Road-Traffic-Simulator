@@ -14,30 +14,30 @@ class Vehicle : public Entity
 {
     
     private:
-    tuple<int, int> velocity;
-    tuple<int, int> acceleration;
+    tuple<double, double> velocity;
+    tuple<double, double> acceleration;
      
     public:
-    Vehicle(string vehicle_type,int length, int breadth, int Vx, int Vy, int Ax, int Ay, int x, int y)
+    Vehicle(string vehicle_type,double length, double breadth, double Vx, double Vy, double Ax, double Ay, double x, double y)
         :Entity(length, breadth,x,y,vehicle_type[0])
     {   
         velocity = make_tuple(Vx,Vy);
         acceleration = make_tuple(Ax,Ay);
     }
 
-    tuple<int,int> getVelocity()
+    tuple<double,double> getVelocity()
      {
          return velocity;
      }
     
-     tuple<int,int> getAcceleration()
+     tuple<double,double> getAcceleration()
      {
          return acceleration;
      }
 
-     void moveByStep(int t)
+     void moveByStep(double t)
      {
-         int x , y, Vx, Vy, Ax, Ay; 
+         double x , y, Vx, Vy, Ax, Ay; 
          tie(x,y) = getLocation();
          tie(Vx,Vy) = velocity;
          tie(Ax,Ay) = acceleration;
@@ -45,9 +45,9 @@ class Vehicle : public Entity
          velocity = make_tuple(Vx+Ax*t, Vy+Ay*t);
      }
 
-     void move(int framelength, int time)
+     void move(double framelength, double time)
      {
-         int N = time/framelength;
+         double N = time/framelength;
          while(N>0)
          {
              moveByStep(framelength);
