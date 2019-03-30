@@ -7,6 +7,8 @@
 #include<chrono>
 #include<cstdlib>
 #include<tuple>
+#include <string>
+#include <cstddef>
 #include "Vehicle.cpp"
 #include "TrafficSignal.cpp"
 
@@ -19,16 +21,18 @@ class Screen
     vector<Vehicle> vehicles_on_screen;
     int time;
     int TotalTime;
+    int tog_time;
     TrafficSignal signal;
     
     public:
-    Screen(int length, int breadth, int timelimit)
+    Screen(int length, int breadth, int timelimit,int toggle)
     {
         signal = TrafficSignal(length/2);
         size = make_tuple(length, breadth);
         screen = vector<vector<char>> (breadth,vector<char>(length,' '));
         time = 0;
         TotalTime = timelimit;
+        tog_time = toggle;
     }
 
     void Print()
@@ -111,7 +115,7 @@ class Screen
     void moveTime(int t)
     {
         time += t;
-        if (time%5==0) signal.toggle();
+        if (time%(tog_time)==0) signal.toggle();
     }
     void RunSimulation()
     {
@@ -122,16 +126,126 @@ class Screen
     }
 };
 int main()
-{
-    Screen screen(30,15,15);
-    Vehicle car("car",2,2,1,0,1,0,5,0);
-    Vehicle bike("bike",2,1,1,0,1,0,0,5);
-    Vehicle truck("truck",4,2,1,0,1,0,-10,10);
-    Vehicle Bus("BUS",3,2,1,0,1,0,0,13);
-    screen.addVehicle(truck);
-    screen.addVehicle(car);
-    screen.addVehicle(bike);
-    screen.addVehicle(Bus);
-    screen.RunSimulation();
-    exit(0);
+{   
+    fstream road_file,vehicle_file;
+    string filename1 = "road.txt";
+    string filename2 = "vehicle.txt";
+
+    string word="";
+
+    road_file.open(filename1.c_str());
+    vehicle_file.open(filename2.c_str());
+
+    int length,width;
+    int toggle;
+    int max_vel,max_acc; 
+    int car_length,car_width,car_vel,car_acc;
+    int truck_length,truck_width,truck_vel,truck_acc;
+    int bus_length,bus_width,bus_vel,bus_acc;
+    int bike_length,bike_width,bike_vel,bike_acc;
+
+    // while(vehicle_file >> word){
+    //     if(word=="MaxValues"){
+    //         vehicle_file >> word;
+    //         max_vel = stoi(word);
+    //         vehicle_file >> word;
+    //         max_acc = stoi(word);
+    //     }
+    // }
+
+
+    while(road_file >> word){
+        if(word=="Road_Length"){
+            road_file >> word;
+            length = stoi(word);
+        }
+
+        if(word=="Road_Width"){
+            road_file >> word;
+            width = stoi(word);
+        }
+    }
+
+    while(vehicle_file >> word){
+
+        if(word=="Car"){
+            vehicle_file >> word;
+            vehicle_file >> word;
+            // cout << word << endl;
+            car_length = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            car_width = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            // cout << word << endl;   
+            car_vel = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            car_acc = stoi(word);            
+        }
+        if(word=="bike"){
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bike_length = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bike_width = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bike_vel = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bike_acc = stoi(word);            
+        }
+        if(word=="Bus"){
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bus_length = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bus_width = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bus_vel = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            bus_acc = stoi(word);            
+        }
+        if(word=="Truck"){
+            vehicle_file >> word;
+            vehicle_file >> word;
+            truck_length = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            truck_width = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            truck_vel = stoi(word);
+            vehicle_file >> word;
+            vehicle_file >> word;
+            truck_acc = stoi(word);            
+        }
+
+        if(word=="Pass"){
+            vehicle_file >> word;
+            toggle = stoi(word);
+        }
+
+
+    }
+
+
+
+     Screen screen(length,width,20,toggle);
+     Vehicle car("car",car_length,car_width,car_vel,0,car_acc,0,0,1);
+     Vehicle bike("bike",bike_length,bike_width,bike_vel,0,bike_acc,0,0,5);
+     Vehicle truck("truck",truck_length,truck_width,truck_vel,0,truck_vel,0,0,10);
+     Vehicle Bus("BUS",bus_length,bus_width,bus_vel,0,bus_acc,0,0,13);
+     screen.addVehicle(truck);
+     screen.addVehicle(car);
+     screen.addVehicle(bike);
+     screen.addVehicle(Bus);
+     screen.RunSimulation();
+     exit(0);
 }

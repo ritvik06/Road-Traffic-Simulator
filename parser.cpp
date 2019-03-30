@@ -25,38 +25,38 @@ int main()
         // cout << "Entered road_id" << endl;
           file >> word;
           file >> word;
-          road_file << word<<"\n";
+          road_file << "Road_Id " << word << "\n";
         }
 
         if(word=="Road_Length"){
           file >> word;
           file >> word;
-          road_file << word <<"\n";
+          road_file << "Road_Length " << word <<"\n";
         }
 
         if(word=="Road_Width"){
           file >> word;
           file >> word;
-          road_file << word<<"\n"; 
+          road_file << "Road_Width " << word<<"\n"; 
         }
 
         if(word=="Road_Signal"){
           file >> word;
           file >> word;
-          road_file << word<<"\n";
+          road_file << "Road_Signal " << word<<"\n";
         }
 
         if(word=="Default_MaxSpeed"){
           file >> word;
           file >> word;  
-          vehicle_file << "Default Max Speed/Acceleration \n";
-          vehicle_file << word<<"\n";
+          vehicle_file << "MaxValues ";
+          vehicle_file << word << " ";
         }
 
         if(word=="Default_Acceleration"){
           file >> word;
           file >> word; 
-          vehicle_file << word<<"\n";
+          vehicle_file << word;
         }
         if(word=="Vehicle_Type"){
             vehicle_file << "\n";
@@ -67,22 +67,22 @@ int main()
         if(word=="Vehicle_Length"){
         file >> word;
         file >> word;
-        vehicle_file << word << " ";
+        vehicle_file << "length" << " " << word << " ";
         }
         if(word=="Vehicle_Width"){
         file >> word;
         file >> word;
-        vehicle_file << word << " ";
+        vehicle_file << "width" << " " << word << " ";
         } 
         if(word=="Vehicle_MaxSpeed"){
         file >> word;
         file >> word;
-        vehicle_file << word << " ";
+        vehicle_file << "speed" << " " << word << " ";
         } 
         if(word=="Vehicle_Acceleration"){
         file >> word;
         file >> word;
-        vehicle_file << word << " ";
+        vehicle_file << "acc" << " " << word << " ";
         }
         if(word=="Signal"){
         file >> word;
@@ -111,7 +111,7 @@ int main()
 
         if(word=="Pass"){
         file >> word;
-        vehicle_file << word << '\n';
+        vehicle_file << "Pass " << word << '\n';
         }         
 
     }
