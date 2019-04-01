@@ -128,15 +128,15 @@ class Screen
 int main()
 {   
     fstream road_file,vehicle_file;
-    string filename1 = "road.txt";
-    string filename2 = "vehicle.txt";
+    string Road = "Road.txt";
+    string Vehicle = "Vehicle.txt";
 
     string word="";
 
-    road_file.open(filename1.c_str());
-    vehicle_file.open(filename2.c_str());
+    road_file.open(Road.c_str());
+    vehicle_file.open(Vehicle.c_str());
 
-    int length,width;
+    int length,width,signal_loc;
     int toggle;
     int max_vel,max_acc; 
     int car_length,car_width,car_vel,car_acc;
@@ -160,9 +160,14 @@ int main()
             length = stoi(word);
         }
 
-        if(word=="Road_Width"){
+        else if(word=="Road_Width"){
             road_file >> word;
             width = stoi(word);
+        }
+        
+        else if(word=="Road_Signal"){
+            road_file >> word;
+            signal_loc = stoi(word);
         }
     }
 

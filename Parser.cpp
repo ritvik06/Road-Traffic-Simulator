@@ -7,15 +7,15 @@ int main()
 {    
     fstream file; 
     ofstream road_file,vehicle_file;
-    string word,filename,filename1,filename2; 
+    string word,config,Road,Vehicle; 
     
-    filename = "config.ini.txt"; 
-    filename1 = "road.txt";
-    filename2 = "vehicle.txt";
+    config = "config.ini"; 
+    Road = "road.txt";
+    Vehicle = "vehicle.txt";
   
-    file.open(filename.c_str()); 
-    road_file.open(filename1.c_str());
-    vehicle_file.open(filename2.c_str());
+    file.open(config.c_str()); 
+    road_file.open(Road.c_str());
+    vehicle_file.open(Vehicle.c_str());
 
     while (file >> word) 
     { 
