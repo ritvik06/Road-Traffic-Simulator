@@ -1,50 +1,34 @@
-#include<iostream>
-#include<vector>
-#include<cmath>
-#include<sstream>
-#include<fstream>
-#include<stdexcept>
-#include<chrono>
-#include<cstdlib>
 #include<tuple>
+#include<cstdlib>
+#include "Entity.hpp"
 
 using namespace std;
-class Entity
-{
-    private:
-     tuple<double, double> coordinates;
-     tuple<double, double> dimensions;
-    
-    public:
-     char symbol;
-     
-     Entity(double length, double breadth, double x, double y, char sym)
+
+     Entity::Entity(double length, double breadth, double x, double y, char sym)
      {
          coordinates = make_tuple(x,y);
          dimensions = make_tuple(length, breadth);
          symbol = sym;
      }
 
-     tuple<double,double> getLocation()
+     tuple<double,double> Entity::getLocation()
      {
          return coordinates;
      }
 
      
-     tuple<double,double> getDimensions()
+     tuple<double,double> Entity::getDimensions()
      {
          return dimensions;
      }
 
-     void setLocation(tuple<double,double> location)
+     void Entity::setLocation(tuple<double,double> location)
      {
          coordinates = location;
      }
 
      
-     void setDimensions(tuple<double,double> size)
+     void Entity::setDimensions(tuple<double,double> size)
      {
          dimensions = size;
      }
-
-};

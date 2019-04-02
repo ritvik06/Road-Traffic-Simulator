@@ -1,41 +1,24 @@
 #include<iostream>
 #include<vector>
-#include<cmath>
-#include<sstream>
-#include<fstream>
-#include<stdexcept>
-#include<chrono>
 #include<cstdlib>
 #include<tuple>
-#include <string>
-#include <cstddef>
-#include "Vehicle.cpp"
-#include "TrafficSignal.cpp"
+#include<cmath>
+#include<string>
+#include<cstddef>
+#include "Vehicle.hpp"
+#include "TrafficSignal.hpp"
+#include "Screen.hpp"
 
 using namespace std;
-class Screen
-{
-    private:
-    tuple<int, int> size;
-    vector<vector<char>> screen;
-    vector<Vehicle> vehicles_on_screen;
-    int time;
-    int TotalTime;
-    int tog_time;
-    TrafficSignal signal;
-    
-    public:
-    Screen(int length, int breadth, int timelimit,int toggle)
+    Screen::Screen(int length, int breadth,int signal_loc)
     {
-        signal = TrafficSignal(length/2);
+        signal = TrafficSignal(signal_loc);
         size = make_tuple(length, breadth);
         screen = vector<vector<char>> (breadth,vector<char>(length,' '));
-        time = 0;
-        TotalTime = timelimit;
-        tog_time = toggle;
+        CurrentTime = -1;
     }
 
-    void Print()
+    void Screen::Print()
     {
         int length, breadth;
         tie(length,breadth) = size;
@@ -58,14 +41,26 @@ class Screen
             cout<<"--";
         }
         cout<<endl;
-        cout <<"Time Elapsed :- " << time << "s      " << "SIGNAL: " << signal.getSignal()<< "     Time Left :- "<<  TotalTime-time << "s " <<endl; 
+        cout <<"Time Elapsed :- " << CurrentTime << "s      " << "SIGNAL: " << signal.getSignal()<< endl; 
     }
 
-    void addVehicle(Vehicle vehicle)
+    void Screen::addVehicle(Vehicle vehicle)
     {
         vehicles_on_screen.push_back(vehicle);
     }
-    void cleanScreen()
+    void Screen::cleanScreen()
+    {
+        int length, breadth;
+        tie(length,breadth) = size;
+        for(int i=0; i<breadth;i++)
+        {
+            for(int j=0;j<length;j++)
+            {  
+                screen.at(i).at(j) = ' ';
+            }    
+        }
+    }
+    bool Screen::isEmpty()
     {
         int length, breadth;
         tie(length,breadth) = size;
@@ -73,13 +68,21 @@ class Screen
         {
             for(int j=0;j<length;j++)
             {
-                screen.at(i).at(j) = ' ';
+                if(screen.at(i).at(j) == ' ' || screen.at(i).at(j) == 'X' || screen.at(i).at(j) == '=')
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }   
             }
         }
+        return true;
     }
-    void refresh()
+    void Screen::refresh()
     {
-        cleanScreen();
+        Screen::cleanScreen();
         int height, width;
         tie(height,width) = size;
         int position = (int)round(signal.getLocation());
@@ -110,147 +113,38 @@ class Screen
             curr.moveByStep(1);
             vehicles_on_screen[i] = curr;
         } 
-        moveTime(1);
     }
-    void moveTime(int t)
+    void Screen::setSignal(string COLOR)
     {
-        time += t;
-        if (time%(tog_time)==0) signal.toggle();
+        signal.setSignal(COLOR);
     }
-    void RunSimulation()
+    void Screen::RunSimulation(int FutureTime)
     {
-        for(int i=0; i<TotalTime; i++)
+        //TimeJump is the time in future till which we want the Simulation to run.
+        while(FutureTime>CurrentTime)
         {
-            Print();
+            CurrentTime++;
+            Screen::Print();
         }
     }
-};
+
+    void Screen::RunFor(int delta_time)
+    {
+        //TimeJump is the time in future till which we want the Simulation to run.
+        Screen::RunSimulation(CurrentTime+delta_time);
+    }
+/*
 int main()
-{   
-    fstream road_file,vehicle_file;
-    string Road = "Road.txt";
-    string Vehicle = "Vehicle.txt";
-
-    string word="";
-
-    road_file.open(Road.c_str());
-    vehicle_file.open(Vehicle.c_str());
-
-    int length,width,signal_loc;
-    int toggle;
-    int max_vel,max_acc; 
-    int car_length,car_width,car_vel,car_acc;
-    int truck_length,truck_width,truck_vel,truck_acc;
-    int bus_length,bus_width,bus_vel,bus_acc;
-    int bike_length,bike_width,bike_vel,bike_acc;
-
-    // while(vehicle_file >> word){
-    //     if(word=="MaxValues"){
-    //         vehicle_file >> word;
-    //         max_vel = stoi(word);
-    //         vehicle_file >> word;
-    //         max_acc = stoi(word);
-    //     }
-    // }
-
-
-    while(road_file >> word){
-        if(word=="Road_Length"){
-            road_file >> word;
-            length = stoi(word);
-        }
-
-        else if(word=="Road_Width"){
-            road_file >> word;
-            width = stoi(word);
-        }
-        
-        else if(word=="Road_Signal"){
-            road_file >> word;
-            signal_loc = stoi(word);
-        }
-    }
-
-    while(vehicle_file >> word){
-
-        if(word=="Car"){
-            vehicle_file >> word;
-            vehicle_file >> word;
-            // cout << word << endl;
-            car_length = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            car_width = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            // cout << word << endl;   
-            car_vel = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            car_acc = stoi(word);            
-        }
-        if(word=="bike"){
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bike_length = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bike_width = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bike_vel = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bike_acc = stoi(word);            
-        }
-        if(word=="Bus"){
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bus_length = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bus_width = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bus_vel = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            bus_acc = stoi(word);            
-        }
-        if(word=="Truck"){
-            vehicle_file >> word;
-            vehicle_file >> word;
-            truck_length = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            truck_width = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            truck_vel = stoi(word);
-            vehicle_file >> word;
-            vehicle_file >> word;
-            truck_acc = stoi(word);            
-        }
-
-        if(word=="Pass"){
-            vehicle_file >> word;
-            toggle = stoi(word);
-        }
-
-
-    }
-
-
-
-     Screen screen(length,width,20,toggle);
-     Vehicle car("car",car_length,car_width,car_vel,0,car_acc,0,0,1);
-     Vehicle bike("bike",bike_length,bike_width,bike_vel,0,bike_acc,0,0,5);
-     Vehicle truck("truck",truck_length,truck_width,truck_vel,0,truck_vel,0,0,10);
-     Vehicle Bus("BUS",bus_length,bus_width,bus_vel,0,bus_acc,0,0,13);
-     screen.addVehicle(truck);
-     screen.addVehicle(car);
-     screen.addVehicle(bike);
-     screen.addVehicle(Bus);
-     screen.RunSimulation();
-     exit(0);
-}
+{
+    Screen screen(30,15,15);
+    Vehicle car("car",2,2,1,0,1,0,5,0);
+    Vehicle bike("bike",2,1,1,0,1,0,0,5);
+    Vehicle truck("truck",4,2,1,0,1,0,-10,10);
+    Vehicle Bus("BUS",3,2,1,0,1,0,0,13);
+    screen.addVehicle(truck);
+    screen.addVehicle(car);
+    screen.addVehicle(bike);
+    screen.addVehicle(Bus);
+    screen.RunSimulation(20);
+    exit(0);
+}*/
