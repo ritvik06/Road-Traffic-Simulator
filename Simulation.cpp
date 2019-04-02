@@ -82,7 +82,7 @@ int main()
             vehicle_vel = stoi(result[6]);
             vehicle_acc = stoi(result[8]);
         
-            if(vehicle_name=="car"){
+            if(vehicle_name=="Car"){
                 Y_coordinate = rand() % width;
                 car.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
                 }
@@ -90,15 +90,15 @@ int main()
                 Y_coordinate = rand() % width;
                 bike.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
                 }
-            else if(vehicle_name=="truck"){
+            else if(vehicle_name=="Truck"){
                 Y_coordinate = rand() % width;
                 truck.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
                 }
-            else if(vehicle_name=="bus"){
+            else if(vehicle_name=="Bus"){
                 Y_coordinate = rand() % width;
                 bus.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
                 }
-            else if(vehicle_name=="auto"){
+            else if(vehicle_name=="Auto"){
                 Y_coordinate = rand() % width;
                 autorickshaw.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
                 }
@@ -188,6 +188,10 @@ int main()
             cout <<"Simulation #"<< SimulationID << " has ended." << endl;                       
         }
     }
+    road_file.close();
+    vehicle_file.close();
+    simulation_file.close();
+
     exit(0);
 }
 
