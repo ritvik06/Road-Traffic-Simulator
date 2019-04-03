@@ -128,8 +128,9 @@ int main()
         }            
         if(word=="Pass"){
         file >> word;
-        simulation_file << "PASS " << word << '\n';
         timestamp += stoi(word);
+        simulation_file << "PASS " << timestamp << '\n';
+        timestamp++;
         }
         if(word=="END"){
         simulation_file << word; 

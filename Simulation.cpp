@@ -32,16 +32,16 @@ int main()
 
     int length = 0,width = 0,signal_loc = 0;
     int SimulationID = 0;
-    int max_vel = 0,max_acc = 0; 
+    double max_vel = 0,max_acc = 0; 
     string vehicle_name = "";
-    int Y_coordinate = 0, vehicle_length = 0,vehicle_width = 0,vehicle_vel = 0,vehicle_acc = 0;
+    double Y_coordinate = 0, X_coordinate = 0, vehicle_length = 0,vehicle_width = 0,vehicle_vel = 0,vehicle_acc = 0;
     
     // while(vehicle_file >> word){
     //     if(word=="MaxValues"){
     //         vehicle_file >> word;
-    //         max_vel = stoi(word);
+    //         max_vel = stod(word);
     //         vehicle_file >> word;
-    //         max_acc = stoi(word);
+    //         max_acc = stod(word);
     //     }
     // }
     Screen screen(0,0,0);
@@ -72,35 +72,40 @@ int main()
         vector<string> result (begin, end);
         
         if(result[0]=="MaxValues"){
-            vehicle_vel = stoi(result[1]);  
-            vehicle_acc = stoi(result[2]); 
+            vehicle_vel = stod(result[1]);  
+            vehicle_acc = stod(result[2]); 
         }
         else {
             vehicle_name = result[0];
-            vehicle_length = stoi(result[2]);
-            vehicle_width = stoi(result[4]);
-            vehicle_vel = stoi(result[6]);
-            vehicle_acc = stoi(result[8]);
+            vehicle_length = stod(result[2]);
+            vehicle_width = stod(result[4]);
+            vehicle_vel = stod(result[6]);
+            vehicle_acc = stod(result[8]);
         
             if(vehicle_name=="Car"){
-                Y_coordinate = rand() % width;
-                car.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
+                X_coordinate = -1*vehicle_length;
+                Y_coordinate = rand() % (int)(width-vehicle_width+1);
+                car.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
                 }
             else if(vehicle_name=="bike"){
-                Y_coordinate = rand() % width;
-                bike.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
+                X_coordinate = -1*vehicle_length;
+                Y_coordinate = rand() % (int)(width-vehicle_width+1);
+                bike.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
                 }
             else if(vehicle_name=="Truck"){
-                Y_coordinate = rand() % width;
-                truck.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
+                X_coordinate = -1*vehicle_length;
+                Y_coordinate = rand() % (int)(width-vehicle_width+1);
+                truck.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
                 }
             else if(vehicle_name=="Bus"){
-                Y_coordinate = rand() % width;
-                bus.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
+                X_coordinate = -1*vehicle_length;
+                Y_coordinate = rand() % (int)(width-vehicle_width+1);
+                bus.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
                 }
             else if(vehicle_name=="Auto"){
-                Y_coordinate = rand() % width;
-                autorickshaw.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,0,Y_coordinate);
+                X_coordinate = -1*vehicle_length;
+                Y_coordinate = rand() % (int)(width-vehicle_width+1);
+                autorickshaw.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
                 }
         }
     }        
@@ -125,7 +130,7 @@ int main()
         }
         else if(result[0]=="Signal") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            screen.setSignal(color);
            cout <<"Signal changed to  "<< color <<endl; 
            screen.RunSimulation(time);
@@ -133,51 +138,61 @@ int main()
         }
         else if(result[0]=="CAR") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            car.setColor(color);
-           car.setCoordinates(0,rand() % width);
+           double l=0,b=0;
+           tie(l,b) = car.dimensions;
+           car.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(car);
            cout <<"A " << color <<" car is added."<<endl; 
            screen.RunSimulation(time);
         }
         else if(result[0]=="BIKE") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            bike.setColor(color);
-           bike.setCoordinates(0,rand() % width);
+           double l=0,b=0;
+           tie(l,b) = bike.dimensions;
+           bike.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(bike);
            cout <<"A " << color <<" bike is added."<<endl; 
            screen.RunSimulation(time);
         }
         else if(result[0]=="BUS") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            bus.setColor(color);
-           bus.setCoordinates(0,rand() % width);
+           double l=0,b=0;
+           tie(l,b) = bus.dimensions;
+           bus.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(bus);
            cout <<"A " << color <<" bus is added."<<endl; 
            screen.RunSimulation(time);
         }
         else if(result[0]=="TRUCK") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            truck.setColor(color);
-           truck.setCoordinates(0,rand() % width);
+           double l=0,b=0;
+           tie(l,b) = truck.dimensions;
+           truck.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(truck);
            cout <<"A " << color <<" truck is added."<<endl;
            screen.RunSimulation(time);
         }
         else if(result[0]=="AUTO") {
            color = result[1]; 
-           time = stoi(result[2]);
+           time = stod(result[2]);
            autorickshaw.setColor(color);
-           autorickshaw.setCoordinates(0,rand() % width);
+           double l=0,b=0;
+           tie(l,b) = autorickshaw.dimensions;
+           autorickshaw.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(autorickshaw);
            cout <<"A " << color <<" auto-rickshaw is added."<<endl; 
            screen.RunSimulation(time);
         }
         else if(result[0]=="PASS") {
-            time = stoi(result[1]);
+            time = stod(result[1]);
             screen.RunSimulation(time);                       
         }
         else if(result[0]=="END") {

@@ -21,8 +21,12 @@ using namespace std;
     void Screen::Print()
     {
         int length, breadth;
+        double framelength = 0.5;
         tie(length,breadth) = size;
-        refresh();
+        for(double i=0; i < 1; i+=framelength)
+        {
+            refresh(framelength);
+        }
         for(int j=0;j<length;j++)
         {
             cout<<"--";
@@ -80,9 +84,151 @@ using namespace std;
         }
         return true;
     }
-    void Screen::refresh()
+    void Screen::Left(Vehicle& curr)
     {
-        Screen::cleanScreen();
+        int height, width;
+        tie(height,width) = size;
+        int position = (int)round(signal.getLocation());
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setClearLeft(true);                            
+        {
+            int j = (int)(y-1);
+            if(j>=width|| j<0) return;
+            for(int k = (int)round(x); k< round(x+l);k++)
+            {
+                if(k>=height || k<0) continue;
+                if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == '=' || screen.at(j).at(k) == 'X' )
+                {
+                    //cout<<"There-Here"<<endl;
+                    continue;
+                }
+                else 
+                {
+                    //cout<<"Here"<<endl;
+                    curr.setClearLeft(false);
+                    break;
+                }
+            }
+        }
+    }
+    void Screen::Right(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        int position = (int)round(signal.getLocation());
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setClearRight(true);                            
+        int j = (int)(y+b);
+        if(j>=width|| j<0) return;
+        for(int k = (int)round(x); k< round(x+l);k++)
+        {
+            if(k>=height || k<0) continue;
+            if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == '=' || screen.at(j).at(k) == 'X' )
+            {
+                //cout<<"There-Here"<<endl;
+                continue;
+            }
+            else 
+            {
+                //cout<<"Here"<<endl;
+                curr.setClearRight(false);
+                break;
+            }
+        }
+    }
+    void Screen::Ahead(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setClearAhead(true);                            
+        for(int j = (int)round(y); j< round(y+b);j++)
+        {
+            if(j>=width|| j<0) continue;
+            int k = (int) round(x+l);
+            if(k>=height || k<0) continue;
+            if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == '=' || screen.at(j).at(k) == 'X' )
+            {
+                //cout<<"There-Here"<<endl;
+                continue;
+            }
+            else
+            {
+                //cout<<"Here"<<endl;
+                //if(curr.symbol[0] == 'C') cout <<"CarShouldStop"<<endl;
+                curr.setClearAhead(false);
+                break;
+            }
+        }
+    }
+
+    void Screen::RedLight(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        int position = (int)round(signal.getLocation());
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setRedLight(false);                            
+        for(int j = (int)round(y); j< round(y+b);j++)
+        {
+            int k = (int)round(x+l);
+            if(k==position && signal.getSignal()=="RED")
+            {
+                //cout<<"There-Here"<<endl;
+                curr.setRedLight(true);
+                break;
+            }
+            else
+            {
+                //cout<<"Here"<<endl;
+                continue;
+            }
+        }
+    }
+   
+    void Screen::RoadLeftEnd(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setRoadLeftEnd(false);                            
+        int j = (int)(y);
+        if(j<=0) 
+        {
+            //cout <<"Left Touch"<<endl;
+            curr.setRoadLeftEnd(true);                            
+        }
+    }
+
+    void Screen::RoadRightEnd(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setRoadRightEnd(false);                            
+        int j = (int)(y+b);
+        if(j>=width) 
+        {
+            //cout <<"Right Touch"<<endl;
+            curr.setRoadRightEnd(true);                            
+        }
+    }
+
+    void Screen::refresh(double framelength)
+    {
+        //Screen::cleanScreen();
         int height, width;
         tie(height,width) = size;
         int position = (int)round(signal.getLocation());
@@ -90,27 +236,45 @@ using namespace std;
         {
             screen.at(i).at(position) = signal.symbol();
         }
-        for (int i = 0; i != vehicles_on_screen.size(); i++)
+        for (int i = 0; i < vehicles_on_screen.size(); i++)
         {
-            double x,y,l,b;
-            bool stop = false;
+            double x,y,l,b,new_x,new_y;
             Vehicle curr = vehicles_on_screen[i];
-            tie(x,y) = curr.getLocation();
             tie(l,b) = curr.getDimensions();
-            for(int k = (int)round(x); k< x+l;k++)
+            tie(x,y) = curr.getLocation();
+            for(int k = (int)round(x); k< round(x+l);k++)
             {
-                if(k>=height || k<0) break;
-                for(int j = (int)round(y); j< y+b;j++)
+                if(k>=height || k<0) continue;
+                for(int j = (int)round(y); j< round(y+b);j++)
                 {
-                    if(j>=width|| j<0) break;
-                    if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == 'X' || screen.at(j).at(k) == '=')
-                    screen.at(j).at(k) = curr.symbol;                    
+                    if(j>=width|| j<0) continue;
+                    screen.at(j).at(k) = (screen.at(j).at(k) == curr.symbol || screen.at(j).at(k) == '!' ) ? ' ' : screen.at(j).at(k) ;
+                }
+            }
+            Screen::RedLight(curr);
+            Screen::Ahead(curr);
+            Screen::Left(curr);
+            Screen::RoadLeftEnd(curr);
+            Screen::Right(curr);
+            Screen::RoadRightEnd(curr);    
+            curr.moveByStep(framelength);
+            tie(new_x,new_y) = curr.getLocation();
+            
+            for(int k = (int)round(new_x); k< round(new_x+l);k++)
+            {
+                if(k>=height || k<0) continue;
+                for(int j = (int)round(new_y); j< round(new_y+b);j++)
+                {
+                    if(j>=width|| j<0) continue;
+                    if(screen.at(j).at(k) == ' ' || screen.at(j).at(k) == '=')
+                        screen.at(j).at(k) = curr.symbol;                    
                     else
-                    screen.at(j).at(k) = '!';
+                    {
+                        screen.at(j).at(k) = '!';
+                    } 
                     //if(k+l>=position && k<=position) stop = true;
                 }
             }
-            curr.moveByStep(1);
             vehicles_on_screen[i] = curr;
         } 
     }

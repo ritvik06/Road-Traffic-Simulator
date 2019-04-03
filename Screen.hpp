@@ -26,8 +26,14 @@ class Screen
     void addVehicle(Vehicle vehicle);
     void cleanScreen();
     bool isEmpty();
-    void refresh();
+    void refresh(double framelength);
     void setSignal(string COLOR);
+    void RedLight(Vehicle& curr);
+    void Ahead(Vehicle& curr);
+    void Left(Vehicle& curr);
+    void Right(Vehicle& curr);
+    void RoadLeftEnd(Vehicle& curr);
+    void RoadRightEnd(Vehicle& curr);
     void RunSimulation(int FutureTime);
     void RunFor(int delta_time);
 };
