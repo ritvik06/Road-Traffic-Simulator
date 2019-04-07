@@ -6,13 +6,13 @@ float location2 = 10;
 
 void rectangle(int x,int y,float w,float h,char colour){
 	switch(colour){
-              case 'G': glColor3f(0.0,1.0,0.0);
-	      break;
-	      case 'R': glColor3f(1.0,0.0,0.0);
-	      break;
-	      case 'B': glColor3f(0.0,0.0,1.0);
-	      break;
-	      default: glColor3f(1.0,1.0,1.0);
+                case 'G': glColor3f(0.0,1.0,0.0);
+                break;
+                case 'R': glColor3f(1.0,0.0,0.0);
+                break;
+                case 'B': glColor3f(0.0,0.0,1.0);
+                break;
+                default: glColor3f(1.0,1.0,1.0);
 	}
 
           glBegin(GL_QUADS);
@@ -58,8 +58,8 @@ static void display(void)
     location1 = location1+0.08;
     rectangle(location2,4,8,1,'R');  
     location2 = location2+0.05;
-   //rectangle(-10,0,1,0.1,'W');
-  //rectangle(-7,0,1,0.1,'W');
+//rectangle(-10,0,1,0.1,'W');
+//rectangle(-7,0,1,0.1,'W');
 //rectangle(-4,0,1,0.1,'W');
 //rectangle(-1,0,1,0.1,'W');
 //rectangle(2,0,1,0.1,'W');

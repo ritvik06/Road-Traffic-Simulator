@@ -7,6 +7,7 @@
 #include<iostream>
 #include<vector>
 #include<tuple>
+#include<fstream>
 #include "Vehicle.hpp"
 #include "TrafficSignal.hpp"
 //=================================
@@ -21,8 +22,12 @@ class Screen
     int CurrentTime;
     
     public:
+    bool InitialPrint = false;
+    fstream display_file;
+    string Display = "DisplayInfo.txt";
     Screen(int length, int breadth,int signal_loc);
     void Print();
+    void PrintDisplayInfo();
     void addVehicle(Vehicle vehicle);
     void cleanScreen();
     bool isEmpty();

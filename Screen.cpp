@@ -3,6 +3,7 @@
 #include<cstdlib>
 #include<tuple>
 #include<cmath>
+#include<fstream>
 #include<string>
 #include<cstddef>
 #include "Vehicle.hpp"
@@ -46,6 +47,32 @@ using namespace std;
         }
         cout<<endl;
         cout <<"Time Elapsed :- " << CurrentTime << "s      " << "SIGNAL: " << signal.getSignal()<< endl; 
+    }
+    
+    void Screen::PrintDisplayInfo()
+    {
+        if(!InitialPrint)
+        {
+            int height, width;
+            tie(height,width) = size;
+            int position = (int)round(signal.getLocation());
+            display_file.open(Display.c_str(),ios::app);
+            display_file <<"Road " << height << " " << width << " TrafficLight " << position << endl;
+            display_file.close();
+            InitialPrint = true;
+        }
+        display_file.open(Display.c_str(), ios::app);
+        display_file <<"Time " << CurrentTime << "      " << "SIGNAL " << signal.getSignal()<< endl;
+        for (int i = 0; i < vehicles_on_screen.size(); i++)
+        {
+            double x,y,l,b,new_x,new_y;
+            Vehicle curr = vehicles_on_screen[i];
+            tie(l,b) = curr.getDimensions();
+            tie(new_x,new_y) = curr.getLocation();
+            display_file << "Vehicle " << i << " " <<curr.getName() << " " << curr.getColor() << " " << l << " " << b << " " << new_x << " " << new_y << endl;  
+        } 
+        display_file.close();
+        
     }
 
     void Screen::addVehicle(Vehicle vehicle)
@@ -278,6 +305,7 @@ using namespace std;
             vehicles_on_screen[i] = curr;
         } 
     }
+    
     void Screen::setSignal(string COLOR)
     {
         signal.setSignal(COLOR);
@@ -289,6 +317,7 @@ using namespace std;
         {
             CurrentTime++;
             Screen::Print();
+            Screen::PrintDisplayInfo();
         }
     }
 

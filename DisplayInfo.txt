@@ -1,0 +1,940 @@
+Road 30 15 TrafficLight 15
+Time 0      SIGNAL RED
+Time 1      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 -1.25 3
+Time 2      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 -0.25 3
+Vehicle 1 bike BLUE 2 1 -1.25 1
+Time 3      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 0.75 3
+Vehicle 1 bike BLUE 2 1 -0.25 1
+Vehicle 2 bike GREEN 2 1 -1.25 12
+Time 4      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 1.75 3
+Vehicle 1 bike BLUE 2 1 0.75 1
+Vehicle 2 bike GREEN 2 1 -0.25 12
+Vehicle 3 Bus BLUE 3 2 -2.75 1.5
+Time 5      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 2.75 3
+Vehicle 1 bike BLUE 2 1 1.75 1
+Vehicle 2 bike GREEN 2 1 0.75 12
+Vehicle 3 Bus BLUE 3 2 -1.75 1.5
+Time 6      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 3.75 3
+Vehicle 1 bike BLUE 2 1 2.75 1
+Vehicle 2 bike GREEN 2 1 1.75 12
+Vehicle 3 Bus BLUE 3 2 -0.75 1.5
+Time 7      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 4.75 3
+Vehicle 1 bike BLUE 2 1 3.75 1
+Vehicle 2 bike GREEN 2 1 2.75 12
+Vehicle 3 Bus BLUE 3 2 0.25 1.5
+Time 8      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 5.75 3
+Vehicle 1 bike BLUE 2 1 4.75 1
+Vehicle 2 bike GREEN 2 1 3.75 12
+Vehicle 3 Bus BLUE 3 2 1.25 1.5
+Time 9      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 6.75 3
+Vehicle 1 bike BLUE 2 1 5.75 1
+Vehicle 2 bike GREEN 2 1 4.75 12
+Vehicle 3 Bus BLUE 3 2 2.25 1.5
+Time 10      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 7.75 3
+Vehicle 1 bike BLUE 2 1 6.75 1
+Vehicle 2 bike GREEN 2 1 5.75 12
+Vehicle 3 Bus BLUE 3 2 3.25 1.5
+Time 11      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 8.75 3
+Vehicle 1 bike BLUE 2 1 7.75 1
+Vehicle 2 bike GREEN 2 1 6.75 12
+Vehicle 3 Bus BLUE 3 2 4.25 1.5
+Time 12      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 9.75 3
+Vehicle 1 bike BLUE 2 1 8.75 1
+Vehicle 2 bike GREEN 2 1 7.75 12
+Vehicle 3 Bus BLUE 3 2 5.25 1.5
+Time 13      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 10.75 3
+Vehicle 1 bike BLUE 2 1 9.75 1
+Vehicle 2 bike GREEN 2 1 8.75 12
+Vehicle 3 Bus BLUE 3 2 6.25 1.5
+Time 14      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 11.75 3
+Vehicle 1 bike BLUE 2 1 10.75 1
+Vehicle 2 bike GREEN 2 1 9.75 12
+Vehicle 3 Bus BLUE 3 2 7.25 1.5
+Time 15      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 11.75 1
+Vehicle 2 bike GREEN 2 1 10.75 12
+Vehicle 3 Bus BLUE 3 2 8.25 1.5
+Time 16      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 11.75 12
+Vehicle 3 Bus BLUE 3 2 9.25 1.5
+Time 17      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 9.75 2
+Time 18      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 9.75 3
+Time 19      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 9.75 4
+Time 20      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 10 4.5
+Time 21      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11 4.5
+Vehicle 4 Car RED 2 2 -1.25 3
+Time 22      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 -0.25 3
+Vehicle 5 bike YELLO 2 1 -1.25 2
+Time 23      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 0.75 3
+Vehicle 5 bike YELLO 2 1 -0.25 2
+Vehicle 6 bike PINK 2 1 -1.25 7
+Time 24      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 1.75 3
+Vehicle 5 bike YELLO 2 1 0.75 2
+Vehicle 6 bike PINK 2 1 -0.25 7
+Vehicle 7 Bus MAGENTA 3 2 -3 7
+Time 25      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 2.75 3
+Vehicle 5 bike YELLO 2 1 1.75 2
+Vehicle 6 bike PINK 2 1 0.75 7
+Vehicle 7 Bus MAGENTA 3 2 -2.75 7.5
+Time 26      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 3.75 3
+Vehicle 5 bike YELLO 2 1 2.75 2
+Vehicle 6 bike PINK 2 1 1.75 7
+Vehicle 7 Bus MAGENTA 3 2 -1.75 7.5
+Time 27      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 4.75 3
+Vehicle 5 bike YELLO 2 1 3.75 2
+Vehicle 6 bike PINK 2 1 2.75 7
+Vehicle 7 Bus MAGENTA 3 2 -0.75 7.5
+Time 28      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 5.75 3
+Vehicle 5 bike YELLO 2 1 4.75 2
+Vehicle 6 bike PINK 2 1 3.75 7
+Vehicle 7 Bus MAGENTA 3 2 0.25 7.5
+Time 29      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 6.75 3
+Vehicle 5 bike YELLO 2 1 5.75 2
+Vehicle 6 bike PINK 2 1 4.75 7
+Vehicle 7 Bus MAGENTA 3 2 1.25 7.5
+Time 30      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 7.75 3
+Vehicle 5 bike YELLO 2 1 6.75 2
+Vehicle 6 bike PINK 2 1 5.75 7
+Vehicle 7 Bus MAGENTA 3 2 2.25 7.5
+Time 31      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 8.75 3
+Vehicle 5 bike YELLO 2 1 7.75 2
+Vehicle 6 bike PINK 2 1 6.75 7
+Vehicle 7 Bus MAGENTA 3 2 3.25 7.5
+Time 32      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 9.75 3
+Vehicle 5 bike YELLO 2 1 8.75 2
+Vehicle 6 bike PINK 2 1 7.75 7
+Vehicle 7 Bus MAGENTA 3 2 4.25 7.5
+Time 33      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 9.75 2
+Vehicle 6 bike PINK 2 1 8.75 7
+Vehicle 7 Bus MAGENTA 3 2 5.25 7.5
+Time 34      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 10.75 2
+Vehicle 6 bike PINK 2 1 9.75 7
+Vehicle 7 Bus MAGENTA 3 2 6.25 7.5
+Time 35      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 11.75 2
+Vehicle 6 bike PINK 2 1 10.75 7
+Vehicle 7 Bus MAGENTA 3 2 7.25 7.5
+Time 36      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 11.75 7
+Vehicle 7 Bus MAGENTA 3 2 8.25 7.5
+Time 37      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 9.25 7.5
+Time 38      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 10.25 7.5
+Time 39      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 0.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.25 7.5
+Time 40      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Time 41      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 -1.25 11
+Time 42      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 -0.25 11
+Vehicle 9 bike BLUE 2 1 -1.25 8
+Time 43      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 0.75 11
+Vehicle 9 bike BLUE 2 1 -0.25 8
+Vehicle 10 Truck GREEN 4 2 -3.625 0
+Time 44      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 1.75 11
+Vehicle 9 bike BLUE 2 1 0.75 8
+Vehicle 10 Truck GREEN 4 2 -2.75 0
+Vehicle 11 Bus BLUE 3 2 -2.25 10
+Time 45      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 0.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 2.75 11
+Vehicle 9 bike BLUE 2 1 1.75 8
+Vehicle 10 Truck GREEN 4 2 -1.75 0
+Vehicle 11 Bus BLUE 3 2 -1.25 10
+Time 46      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 3.75 11
+Vehicle 9 bike BLUE 2 1 2.75 8
+Vehicle 10 Truck GREEN 4 2 -0.75 0
+Vehicle 11 Bus BLUE 3 2 -0.25 10
+Time 47      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 4.75 11
+Vehicle 9 bike BLUE 2 1 3.75 8
+Vehicle 10 Truck GREEN 4 2 0.25 0
+Vehicle 11 Bus BLUE 3 2 0.75 10
+Time 48      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 5.75 11
+Vehicle 9 bike BLUE 2 1 4.75 8
+Vehicle 10 Truck GREEN 4 2 1.25 0
+Vehicle 11 Bus BLUE 3 2 1.75 10
+Time 49      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 6.75 11
+Vehicle 9 bike BLUE 2 1 5.75 8
+Vehicle 10 Truck GREEN 4 2 2.25 0
+Vehicle 11 Bus BLUE 3 2 2.75 10
+Time 50      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 7.75 11
+Vehicle 9 bike BLUE 2 1 6.75 8
+Vehicle 10 Truck GREEN 4 2 3.25 0
+Vehicle 11 Bus BLUE 3 2 3.75 10
+Time 51      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 0.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 8.75 11
+Vehicle 9 bike BLUE 2 1 7.75 8
+Vehicle 10 Truck GREEN 4 2 4.25 0
+Vehicle 11 Bus BLUE 3 2 4.75 10
+Time 52      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 1.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 9.75 11
+Vehicle 9 bike BLUE 2 1 8.75 8
+Vehicle 10 Truck GREEN 4 2 5.25 0
+Vehicle 11 Bus BLUE 3 2 5.75 10
+Time 53      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 10.75 11
+Vehicle 9 bike BLUE 2 1 9.75 8
+Vehicle 10 Truck GREEN 4 2 6.25 0
+Vehicle 11 Bus BLUE 3 2 6.75 10
+Time 54      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 10.75 12
+Vehicle 9 bike BLUE 2 1 9.75 9
+Vehicle 10 Truck GREEN 4 2 7.25 0
+Vehicle 11 Bus BLUE 3 2 7.75 10
+Time 55      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 2.5
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 11 12.5
+Vehicle 9 bike BLUE 2 1 9.75 8.5
+Vehicle 10 Truck GREEN 4 2 8.25 0
+Vehicle 11 Bus BLUE 3 2 8.75 10
+Time 56      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12 12.5
+Vehicle 9 bike BLUE 2 1 9.75 7.5
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 9.75 10
+Time 57      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 10.75 10
+Time 58      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 59      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 60      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 61      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 62      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 63      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 64      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 65      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 66      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 67      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 68      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 69      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 1
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 70      SIGNAL RED
+Vehicle 0 Car GREEN 2 2 12.75 3
+Vehicle 1 bike BLUE 2 1 12.75 1
+Vehicle 2 bike GREEN 2 1 12.75 12
+Vehicle 3 Bus BLUE 3 2 11.5 4.5
+Vehicle 4 Car RED 2 2 10.75 3
+Vehicle 5 bike YELLO 2 1 12.75 2
+Vehicle 6 bike PINK 2 1 12.75 7
+Vehicle 7 Bus MAGENTA 3 2 11.75 7.5
+Vehicle 8 Car GREEN 2 2 12.5 12.5
+Vehicle 9 bike BLUE 2 1 10.5 7
+Vehicle 10 Truck GREEN 4 2 8.75 0.5
+Vehicle 11 Bus BLUE 3 2 11.75 10
+Time 71      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 13.5 3
+Vehicle 1 bike BLUE 2 1 13.5 1
+Vehicle 2 bike GREEN 2 1 13.5 12
+Vehicle 3 Bus BLUE 3 2 12.25 4.5
+Vehicle 4 Car RED 2 2 11 3
+Vehicle 5 bike YELLO 2 1 13.5 2
+Vehicle 6 bike PINK 2 1 13.5 7
+Vehicle 7 Bus MAGENTA 3 2 12.5 7.5
+Vehicle 8 Car GREEN 2 2 13.25 12.5
+Vehicle 9 bike BLUE 2 1 10.75 7
+Vehicle 10 Truck GREEN 4 2 8.875 1
+Vehicle 11 Bus BLUE 3 2 12.5 10
+Time 72      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 14.5 3
+Vehicle 1 bike BLUE 2 1 14.5 1
+Vehicle 2 bike GREEN 2 1 14.5 12
+Vehicle 3 Bus BLUE 3 2 13.25 4.5
+Vehicle 4 Car RED 2 2 12 3
+Vehicle 5 bike YELLO 2 1 14.5 2
+Vehicle 6 bike PINK 2 1 14.5 7
+Vehicle 7 Bus MAGENTA 3 2 13.5 7.5
+Vehicle 8 Car GREEN 2 2 14.25 12.5
+Vehicle 9 bike BLUE 2 1 11.75 7
+Vehicle 10 Truck GREEN 4 2 9.5 1
+Vehicle 11 Bus BLUE 3 2 13.5 10
+Time 73      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 15.5 3
+Vehicle 1 bike BLUE 2 1 15.5 1
+Vehicle 2 bike GREEN 2 1 15.5 12
+Vehicle 3 Bus BLUE 3 2 14.25 4.5
+Vehicle 4 Car RED 2 2 13 3
+Vehicle 5 bike YELLO 2 1 15.5 2
+Vehicle 6 bike PINK 2 1 15.5 7
+Vehicle 7 Bus MAGENTA 3 2 14.5 7.5
+Vehicle 8 Car GREEN 2 2 15.25 12.5
+Vehicle 9 bike BLUE 2 1 12.75 7
+Vehicle 10 Truck GREEN 4 2 10.5 1
+Vehicle 11 Bus BLUE 3 2 14.5 10
+Time 74      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 16.5 3
+Vehicle 1 bike BLUE 2 1 16.5 1
+Vehicle 2 bike GREEN 2 1 16.5 12
+Vehicle 3 Bus BLUE 3 2 15.25 4.5
+Vehicle 4 Car RED 2 2 14 3
+Vehicle 5 bike YELLO 2 1 16.5 2
+Vehicle 6 bike PINK 2 1 16.5 7
+Vehicle 7 Bus MAGENTA 3 2 15.5 7.5
+Vehicle 8 Car GREEN 2 2 16.25 12.5
+Vehicle 9 bike BLUE 2 1 13.75 7
+Vehicle 10 Truck GREEN 4 2 11.5 1
+Vehicle 11 Bus BLUE 3 2 15.5 10
+Time 75      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 17.5 3
+Vehicle 1 bike BLUE 2 1 17.5 1
+Vehicle 2 bike GREEN 2 1 17.5 12
+Vehicle 3 Bus BLUE 3 2 16.25 4.5
+Vehicle 4 Car RED 2 2 15 3
+Vehicle 5 bike YELLO 2 1 17.5 2
+Vehicle 6 bike PINK 2 1 17.5 7
+Vehicle 7 Bus MAGENTA 3 2 16.5 7.5
+Vehicle 8 Car GREEN 2 2 17.25 12.5
+Vehicle 9 bike BLUE 2 1 14.75 7
+Vehicle 10 Truck GREEN 4 2 12.5 1
+Vehicle 11 Bus BLUE 3 2 16.5 10
+Time 76      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 18.5 3
+Vehicle 1 bike BLUE 2 1 18.5 1
+Vehicle 2 bike GREEN 2 1 18.5 12
+Vehicle 3 Bus BLUE 3 2 17.25 4.5
+Vehicle 4 Car RED 2 2 16 3
+Vehicle 5 bike YELLO 2 1 18.5 2
+Vehicle 6 bike PINK 2 1 18.5 7
+Vehicle 7 Bus MAGENTA 3 2 17.5 7.5
+Vehicle 8 Car GREEN 2 2 18.25 12.5
+Vehicle 9 bike BLUE 2 1 15.75 7
+Vehicle 10 Truck GREEN 4 2 13.5 1
+Vehicle 11 Bus BLUE 3 2 17.5 10
+Time 77      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 19.5 3
+Vehicle 1 bike BLUE 2 1 19.5 1
+Vehicle 2 bike GREEN 2 1 19.5 12
+Vehicle 3 Bus BLUE 3 2 18.25 4.5
+Vehicle 4 Car RED 2 2 17 3
+Vehicle 5 bike YELLO 2 1 19.5 2
+Vehicle 6 bike PINK 2 1 19.5 7
+Vehicle 7 Bus MAGENTA 3 2 18.5 7.5
+Vehicle 8 Car GREEN 2 2 19.25 12.5
+Vehicle 9 bike BLUE 2 1 16.75 7
+Vehicle 10 Truck GREEN 4 2 14.5 1
+Vehicle 11 Bus BLUE 3 2 18.5 10
+Time 78      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 20.5 3
+Vehicle 1 bike BLUE 2 1 20.5 1
+Vehicle 2 bike GREEN 2 1 20.5 12
+Vehicle 3 Bus BLUE 3 2 19.25 4.5
+Vehicle 4 Car RED 2 2 18 3
+Vehicle 5 bike YELLO 2 1 20.5 2
+Vehicle 6 bike PINK 2 1 20.5 7
+Vehicle 7 Bus MAGENTA 3 2 19.5 7.5
+Vehicle 8 Car GREEN 2 2 20.25 12.5
+Vehicle 9 bike BLUE 2 1 17.75 7
+Vehicle 10 Truck GREEN 4 2 15.5 1
+Vehicle 11 Bus BLUE 3 2 19.5 10
+Time 79      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 21.5 3
+Vehicle 1 bike BLUE 2 1 21.5 1
+Vehicle 2 bike GREEN 2 1 21.5 12
+Vehicle 3 Bus BLUE 3 2 20.25 4.5
+Vehicle 4 Car RED 2 2 19 3
+Vehicle 5 bike YELLO 2 1 21.5 2
+Vehicle 6 bike PINK 2 1 21.5 7
+Vehicle 7 Bus MAGENTA 3 2 20.5 7.5
+Vehicle 8 Car GREEN 2 2 21.25 12.5
+Vehicle 9 bike BLUE 2 1 18.75 7
+Vehicle 10 Truck GREEN 4 2 16.5 1
+Vehicle 11 Bus BLUE 3 2 20.5 10
+Time 80      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 22.5 3
+Vehicle 1 bike BLUE 2 1 22.5 1
+Vehicle 2 bike GREEN 2 1 22.5 12
+Vehicle 3 Bus BLUE 3 2 21.25 4.5
+Vehicle 4 Car RED 2 2 20 3
+Vehicle 5 bike YELLO 2 1 22.5 2
+Vehicle 6 bike PINK 2 1 22.5 7
+Vehicle 7 Bus MAGENTA 3 2 21.5 7.5
+Vehicle 8 Car GREEN 2 2 22.25 12.5
+Vehicle 9 bike BLUE 2 1 19.75 7
+Vehicle 10 Truck GREEN 4 2 17.5 1
+Vehicle 11 Bus BLUE 3 2 21.5 10
+Time 81      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 23.5 3
+Vehicle 1 bike BLUE 2 1 23.5 1
+Vehicle 2 bike GREEN 2 1 23.5 12
+Vehicle 3 Bus BLUE 3 2 22.25 4.5
+Vehicle 4 Car RED 2 2 21 3
+Vehicle 5 bike YELLO 2 1 23.5 2
+Vehicle 6 bike PINK 2 1 23.5 7
+Vehicle 7 Bus MAGENTA 3 2 22.5 7.5
+Vehicle 8 Car GREEN 2 2 23.25 12.5
+Vehicle 9 bike BLUE 2 1 20.75 7
+Vehicle 10 Truck GREEN 4 2 18.5 1
+Vehicle 11 Bus BLUE 3 2 22.5 10
+Time 82      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 24.5 3
+Vehicle 1 bike BLUE 2 1 24.5 1
+Vehicle 2 bike GREEN 2 1 24.5 12
+Vehicle 3 Bus BLUE 3 2 23.25 4.5
+Vehicle 4 Car RED 2 2 22 3
+Vehicle 5 bike YELLO 2 1 24.5 2
+Vehicle 6 bike PINK 2 1 24.5 7
+Vehicle 7 Bus MAGENTA 3 2 23.5 7.5
+Vehicle 8 Car GREEN 2 2 24.25 12.5
+Vehicle 9 bike BLUE 2 1 21.75 7
+Vehicle 10 Truck GREEN 4 2 19.5 1
+Vehicle 11 Bus BLUE 3 2 23.5 10
+Time 83      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 25.5 3
+Vehicle 1 bike BLUE 2 1 25.5 1
+Vehicle 2 bike GREEN 2 1 25.5 12
+Vehicle 3 Bus BLUE 3 2 24.25 4.5
+Vehicle 4 Car RED 2 2 23 3
+Vehicle 5 bike YELLO 2 1 25.5 2
+Vehicle 6 bike PINK 2 1 25.5 7
+Vehicle 7 Bus MAGENTA 3 2 24.5 7.5
+Vehicle 8 Car GREEN 2 2 25.25 12.5
+Vehicle 9 bike BLUE 2 1 22.75 7
+Vehicle 10 Truck GREEN 4 2 20.5 1
+Vehicle 11 Bus BLUE 3 2 24.5 10
+Time 84      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 26.5 3
+Vehicle 1 bike BLUE 2 1 26.5 1
+Vehicle 2 bike GREEN 2 1 26.5 12
+Vehicle 3 Bus BLUE 3 2 25.25 4.5
+Vehicle 4 Car RED 2 2 24 3
+Vehicle 5 bike YELLO 2 1 26.5 2
+Vehicle 6 bike PINK 2 1 26.5 7
+Vehicle 7 Bus MAGENTA 3 2 25.5 7.5
+Vehicle 8 Car GREEN 2 2 26.25 12.5
+Vehicle 9 bike BLUE 2 1 23.75 7
+Vehicle 10 Truck GREEN 4 2 21.5 1
+Vehicle 11 Bus BLUE 3 2 25.5 10
+Time 85      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 27.5 3
+Vehicle 1 bike BLUE 2 1 27.5 1
+Vehicle 2 bike GREEN 2 1 27.5 12
+Vehicle 3 Bus BLUE 3 2 26.25 4.5
+Vehicle 4 Car RED 2 2 25 3
+Vehicle 5 bike YELLO 2 1 27.5 2
+Vehicle 6 bike PINK 2 1 27.5 7
+Vehicle 7 Bus MAGENTA 3 2 26.5 7.5
+Vehicle 8 Car GREEN 2 2 27.25 12.5
+Vehicle 9 bike BLUE 2 1 24.75 7
+Vehicle 10 Truck GREEN 4 2 22.5 1
+Vehicle 11 Bus BLUE 3 2 26.5 10
+Time 86      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 28.5 3
+Vehicle 1 bike BLUE 2 1 28.5 1
+Vehicle 2 bike GREEN 2 1 28.5 12
+Vehicle 3 Bus BLUE 3 2 27.25 4.5
+Vehicle 4 Car RED 2 2 26 3
+Vehicle 5 bike YELLO 2 1 28.5 2
+Vehicle 6 bike PINK 2 1 28.5 7
+Vehicle 7 Bus MAGENTA 3 2 27.5 7.5
+Vehicle 8 Car GREEN 2 2 28.25 12.5
+Vehicle 9 bike BLUE 2 1 25.75 7
+Vehicle 10 Truck GREEN 4 2 23.5 1
+Vehicle 11 Bus BLUE 3 2 27.5 10
+Time 87      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 29.5 3
+Vehicle 1 bike BLUE 2 1 29.5 1
+Vehicle 2 bike GREEN 2 1 29.5 12
+Vehicle 3 Bus BLUE 3 2 28.25 4.5
+Vehicle 4 Car RED 2 2 27 3
+Vehicle 5 bike YELLO 2 1 29.5 2
+Vehicle 6 bike PINK 2 1 29.5 7
+Vehicle 7 Bus MAGENTA 3 2 28.5 7.5
+Vehicle 8 Car GREEN 2 2 29.25 12.5
+Vehicle 9 bike BLUE 2 1 26.75 7
+Vehicle 10 Truck GREEN 4 2 24.5 1
+Vehicle 11 Bus BLUE 3 2 28.5 10
+Time 88      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 30.5 3
+Vehicle 1 bike BLUE 2 1 30.5 1
+Vehicle 2 bike GREEN 2 1 30.5 12
+Vehicle 3 Bus BLUE 3 2 29.25 4.5
+Vehicle 4 Car RED 2 2 28 3
+Vehicle 5 bike YELLO 2 1 30.5 2
+Vehicle 6 bike PINK 2 1 30.5 7
+Vehicle 7 Bus MAGENTA 3 2 29.5 7.5
+Vehicle 8 Car GREEN 2 2 30.25 12.5
+Vehicle 9 bike BLUE 2 1 27.75 7
+Vehicle 10 Truck GREEN 4 2 25.5 1
+Vehicle 11 Bus BLUE 3 2 29.5 10
+Time 89      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 31.5 3
+Vehicle 1 bike BLUE 2 1 31.5 1
+Vehicle 2 bike GREEN 2 1 31.5 12
+Vehicle 3 Bus BLUE 3 2 30.25 4.5
+Vehicle 4 Car RED 2 2 29 3
+Vehicle 5 bike YELLO 2 1 31.5 2
+Vehicle 6 bike PINK 2 1 31.5 7
+Vehicle 7 Bus MAGENTA 3 2 30.5 7.5
+Vehicle 8 Car GREEN 2 2 31.25 12.5
+Vehicle 9 bike BLUE 2 1 28.75 7
+Vehicle 10 Truck GREEN 4 2 26.5 1
+Vehicle 11 Bus BLUE 3 2 30.5 10
+Time 90      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 32.5 3
+Vehicle 1 bike BLUE 2 1 32.5 1
+Vehicle 2 bike GREEN 2 1 32.5 12
+Vehicle 3 Bus BLUE 3 2 31.25 4.5
+Vehicle 4 Car RED 2 2 30 3
+Vehicle 5 bike YELLO 2 1 32.5 2
+Vehicle 6 bike PINK 2 1 32.5 7
+Vehicle 7 Bus MAGENTA 3 2 31.5 7.5
+Vehicle 8 Car GREEN 2 2 32.25 12.5
+Vehicle 9 bike BLUE 2 1 29.75 7
+Vehicle 10 Truck GREEN 4 2 27.5 1
+Vehicle 11 Bus BLUE 3 2 31.5 10
+Time 91      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 33.5 3
+Vehicle 1 bike BLUE 2 1 33.5 1
+Vehicle 2 bike GREEN 2 1 33.5 12
+Vehicle 3 Bus BLUE 3 2 32.25 4.5
+Vehicle 4 Car RED 2 2 31 3
+Vehicle 5 bike YELLO 2 1 33.5 2
+Vehicle 6 bike PINK 2 1 33.5 7
+Vehicle 7 Bus MAGENTA 3 2 32.5 7.5
+Vehicle 8 Car GREEN 2 2 33.25 12.5
+Vehicle 9 bike BLUE 2 1 30.75 7
+Vehicle 10 Truck GREEN 4 2 28.5 1
+Vehicle 11 Bus BLUE 3 2 32.5 10
+Time 92      SIGNAL GREEN
+Vehicle 0 Car GREEN 2 2 34.5 3
+Vehicle 1 bike BLUE 2 1 34.5 1
+Vehicle 2 bike GREEN 2 1 34.5 12
+Vehicle 3 Bus BLUE 3 2 33.25 4.5
+Vehicle 4 Car RED 2 2 32 3
+Vehicle 5 bike YELLO 2 1 34.5 2
+Vehicle 6 bike PINK 2 1 34.5 7
+Vehicle 7 Bus MAGENTA 3 2 33.5 7.5
+Vehicle 8 Car GREEN 2 2 34.25 12.5
+Vehicle 9 bike BLUE 2 1 31.75 7
+Vehicle 10 Truck GREEN 4 2 29.5 1
+Vehicle 11 Bus BLUE 3 2 33.5 10

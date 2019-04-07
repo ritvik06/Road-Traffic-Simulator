@@ -42,6 +42,8 @@ class Vehicle : public Entity
      void setClearLeft(bool clearLeft);
      void setClearRight(bool clearRight);
      void setColor(string Color);
+     string getName();
+     string getColor();
      bool getRedLight();
      bool getRoadLeftEnd();
      bool getRoadRightEnd();

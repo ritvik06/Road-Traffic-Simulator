@@ -77,6 +77,16 @@ using namespace std;
         ClearRight = clearRight;            
      }
      
+      string Vehicle::getName()
+     {
+        return vehicle;            
+     }
+
+      string Vehicle::getColor()
+     {
+        return color;            
+     }
+
       bool Vehicle::getRedLight()
      {
         return RedLight;            
