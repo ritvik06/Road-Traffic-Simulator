@@ -1,8 +1,8 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 
-float location1 = 10;
-float location2 = 10;
+float location1 = -10;
+float location2 = -10;
 
 void rectangle(int x,int y,float w,float h,char colour){
 	switch(colour){
@@ -16,10 +16,10 @@ void rectangle(int x,int y,float w,float h,char colour){
 	}
 
           glBegin(GL_QUADS);
-              glVertex3f(x,y+h,-10);
-              glVertex3f(x+w,y+h,-10);
-              glVertex3f(x+w,y,-10);
               glVertex3f(x,y,-10);
+              glVertex3f(x+w,y,-10);
+              glVertex3f(x+w,y-h,-10);
+              glVertex3f(x,y-h,-10);
 
   glEnd();	
 }
@@ -27,10 +27,10 @@ void rectangle(int x,int y,float w,float h,char colour){
 void road(void){
 	glColor3f(0.1,0.1,0.1);
 	glBegin(GL_QUADS);
-	glVertex3f(0,6,-10);
-	glVertex3f(20,6,-10);
-	glVertex3f(20,0,-10);
-	glVertex3f(0,0,-10);
+	glVertex3f(10,3,-10);
+	glVertex3f(-10,3,-10);
+	glVertex3f(-10,-3,-10);
+	glVertex3f(10,-3,-10);
 	glEnd();
 
 }
@@ -43,8 +43,7 @@ static void resize(int width, int height)
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0.0, width, 0.0, height, -50.0, 50.0);
-    glFrustum(0, 2*ar, 0.0, 2.0, 2.0, 100.0);
+    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity() ;
@@ -54,9 +53,9 @@ static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
     road();
-    rectangle(location1,2,4,1,'G');
+    rectangle(location1,-2,2,1,'G');
     location1 = location1+0.08;
-    rectangle(location2,4,8,1,'R');  
+    rectangle(location2,2,2,1,'R');  
     location2 = location2+0.05;
 //rectangle(-10,0,1,0.1,'W');
 //rectangle(-7,0,1,0.1,'W');
@@ -82,7 +81,7 @@ int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
-    glutInitWindowPosition(0,0);
+    glutInitWindowPosition(320,240);
 
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 

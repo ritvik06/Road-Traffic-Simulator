@@ -1,76 +1,70 @@
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
+#include <stdio.h> 
+#include <math.h> 
+#include <time.h> 
+#include <GL/glut.h> 
 
-void changeSize(int w, int h) {
+#define maxWD 640 
+#define maxHT 480
 
-	// Prevent a divide by zero, when window is too short
-	// (you cant make a window of zero width).
-	if (h == 0)
-		h = 1;
+void delay(unsigned int mseconds) 
+{ 
+    clock_t goal = mseconds + clock(); 
+    while (goal > clock()) 
+        ; 
+} 
 
-	float ratio =  w * 1.0 / h;
+void myInit(void) 
+{ 
+    glClearColor(0.0,0.0, 0.0, 0.0); 
+    glMatrixMode(GL_PROJECTION); 
+    glLoadIdentity(); 
+    gluOrtho2D(0.0, maxWD, 0.0, maxHT); 
+    glClear(GL_COLOR_BUFFER_BIT); 
+    glFlush(); 
+} 
 
-	// Use the Projection Matrix
-	glMatrixMode(GL_PROJECTION);
+void drawRect(int x) 
+{ 
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS); 
+    glVertex2i(x, 1);
+    glVertex2i(x+3,1);
+    glVertex2i(x+3, -1);
+    glVertex2i(x,-1); 
+    glEnd(); 
+} 
 
-	// Reset Matrix
-	glLoadIdentity();
+void translatePoint(int px,int tx) 
+{ 
+    int fx = px;
+  while (1) { 
+    glClear(GL_COLOR_BUFFER_BIT); 
+  
+        update 
+        px = px + tx; 
+  
+        drawRect(px); // drawing the point 
+  
+        glFlush(); 
+        delay(10); 
+    } 
+} 
 
-	// Set the viewport to be the entire window
-	glViewport(0, 0, w, h);
-
-	// Set the correct perspective.
-	gluPerspective(45,ratio,1,100);
-
-	// Get Back to the Modelview
-	glMatrixMode(GL_MODELVIEW);
+void myDisplay(void) 
+{
+    // translatePoint(100,1);
+    drawRect(0);
 }
 
-float angle = 0.0f;
+int main(int argc, char** argv) 
+{ 
+    glutInit(&argc, argv); 
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
+    glutInitWindowSize(maxWD, maxHT); 
+    glutInitWindowPosition(100, 150); 
+    glutCreateWindow("Transforming point"); 
+    glutDisplayFunc(myDisplay); 
+    myInit(); 
+    glutMainLoop(); 
 
-void renderScene(void) {
-
-	// Clear Color and Depth Buffers
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	// Reset transformations
-	glLoadIdentity();
-	// Set the camera
-	gluLookAt(	0.0f, 0.0f, 10.0f,
-			0.0f, 0.0f,  0.0f,
-			0.0f, 1.0f,  0.0f);
-
-	glRotatef(angle, 0.0f, 1.0f, 0.0f);
-
-	glBegin(GL_TRIANGLES);
-		glVertex3f(-2.0f,-2.0f, 0.0f);
-		glVertex3f( 2.0f, 0.0f, 0.0);
-		glVertex3f( 0.0f, 2.0f, 0.0);
-	glEnd();
-
-	angle+=0.1f;
-
-	glutSwapBuffers();
-}
-
-int main(int argc, char **argv) {
-
-	// init GLUT and create window
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(100,100);
-	glutInitWindowSize(320,320);
-	glutCreateWindow("Lighthouse3D - GLUT Tutorial");
-
-	// register callbacks
-	glutDisplayFunc(renderScene);
-	glutReshapeFunc(changeSize);
-	glutIdleFunc(renderScene);
-	// enter GLUT event processing loop
-	glutMainLoop();
-
-	return 1;
 }
