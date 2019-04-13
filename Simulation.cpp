@@ -130,70 +130,73 @@ int main()
         }
         else if(result[0]=="Signal") {
            color = result[1]; 
-           time = stod(result[2]);
            screen.setSignal(color);
            cout <<"Signal changed to  "<< color <<endl; 
-           screen.RunSimulation(time);
+           screen.RunFor(1);
                   
         }
         else if(result[0]=="CAR") {
            color = result[1]; 
-           time = stod(result[2]);
+           //time = stod(result[2]);
            car.setColor(color);
            double l=0,b=0;
            tie(l,b) = car.dimensions;
            car.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(car);
            cout <<"A " << color <<" car is added."<<endl; 
-           screen.RunSimulation(time);
+           screen.RunFor(1);
         }
         else if(result[0]=="BIKE") {
            color = result[1]; 
-           time = stod(result[2]);
+           //time = stod(result[2]);
            bike.setColor(color);
            double l=0,b=0;
            tie(l,b) = bike.dimensions;
            bike.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(bike);
            cout <<"A " << color <<" bike is added."<<endl; 
-           screen.RunSimulation(time);
+           screen.RunFor(1);
         }
         else if(result[0]=="BUS") {
            color = result[1]; 
-           time = stod(result[2]);
+           //time = stod(result[2]);
            bus.setColor(color);
            double l=0,b=0;
            tie(l,b) = bus.dimensions;
            bus.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(bus);
            cout <<"A " << color <<" bus is added."<<endl; 
-           screen.RunSimulation(time);
+           screen.RunFor(1);
         }
         else if(result[0]=="TRUCK") {
            color = result[1]; 
-           time = stod(result[2]);
+           //time = stod(result[2]);
            truck.setColor(color);
            double l=0,b=0;
            tie(l,b) = truck.dimensions;
            truck.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(truck);
            cout <<"A " << color <<" truck is added."<<endl;
-           screen.RunSimulation(time);
+           screen.RunFor(1);
         }
         else if(result[0]=="AUTO") {
            color = result[1]; 
-           time = stod(result[2]);
+           //time = stod(result[2]);
            autorickshaw.setColor(color);
            double l=0,b=0;
            tie(l,b) = autorickshaw.dimensions;
            autorickshaw.setCoordinates(-1*l,rand() % (int)(width-b+1));
            screen.addVehicle(autorickshaw);
            cout <<"A " << color <<" auto-rickshaw is added."<<endl; 
-           screen.RunSimulation(time);
+           screen.RunFor(1);
         }
         else if(result[0]=="PASS") {
             time = stod(result[1]);
-            screen.RunSimulation(time);                       
+            while(time>0)
+            {
+                screen.RunFor(1);
+                time--;
+            }                       
         }
         else if(result[0]=="END") {
             while(!screen.isEmpty())

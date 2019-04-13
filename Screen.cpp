@@ -11,6 +11,27 @@
 #include "Screen.hpp"
 
 using namespace std;
+    /*Screen::Screen(Screen &oldScreen) 
+    {
+        int length;
+        int breadth;
+        int signal_loc;
+        float t;
+        string Signal = "";
+        tie(length,breadth,signal_loc,Signal,t)= oldScreen.ScreenInfo();
+        signal = TrafficSignal(signal_loc);
+        signal.setSignal(Signal);
+        size = make_tuple(length, breadth);
+        vector<Vehicle> Vehicles = oldScreen.Vehicles();
+        CurrentTime = t;
+        for (int i = 0; i < Vehicles.size(); i++)
+            {
+                Vehicle curr = Vehicles[i];
+                vehicles_on_screen.push_back(curr);
+            }
+        screen = vector<vector<char>> (breadth,vector<char>(length,' '));
+    }*/
+
     Screen::Screen(int length, int breadth,int signal_loc)
     {
         signal = TrafficSignal(signal_loc);
@@ -19,10 +40,25 @@ using namespace std;
         CurrentTime = -1;
     }
 
+    tuple<int,int,int,string,float> Screen::ScreenInfo()
+    {
+        int height, width;
+        tie(height,width) = size;
+        int position = (int)round(signal.getLocation());
+        string Signal = signal.getSignal();
+        return make_tuple(height,width,position,Signal,CurrentTime);
+    }
+
+    vector<Vehicle> Screen::Vehicles()
+    {
+        return vehicles_on_screen;
+    }
+    
+    
     void Screen::Print()
     {
         int length, breadth;
-        double framelength = 0.5;
+        double framelength = 1;
         tie(length,breadth) = size;
         for(double i=0; i < 1; i+=framelength)
         {
@@ -51,8 +87,11 @@ using namespace std;
     
     void Screen::PrintDisplayInfo()
     {
+        fstream display_file;
+        string Display = "DisplayInfo.txt";
         if(!InitialPrint)
         {
+            
             int height, width;
             tie(height,width) = size;
             int position = (int)round(signal.getLocation());
@@ -317,7 +356,16 @@ using namespace std;
         {
             CurrentTime++;
             Screen::Print();
-            Screen::PrintDisplayInfo();
+            //Screen::PrintDisplayInfo();
+        }
+    }
+
+    void Screen::RunDisplay(float FutureTime,float framelength)
+    {
+        while(FutureTime>CurrentTime)
+        {
+            CurrentTime+=framelength;
+            Screen::refresh(framelength);
         }
     }
 
@@ -326,6 +374,13 @@ using namespace std;
         //TimeJump is the time in future till which we want the Simulation to run.
         Screen::RunSimulation(CurrentTime+delta_time);
     }
+
+    void Screen::RunDisplayFor(int delta_time)
+    {
+        //TimeJump is the time in future till which we want the Simulation to run.
+        Screen::RunDisplay(CurrentTime+delta_time,0.5);
+    }
+    
 /*
 int main()
 {

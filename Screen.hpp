@@ -19,15 +19,18 @@ class Screen
     vector<vector<char>> screen;
     vector<Vehicle> vehicles_on_screen;
     TrafficSignal signal;
-    int CurrentTime;
+    float CurrentTime;
     
     public:
     bool InitialPrint = false;
-    fstream display_file;
-    string Display = "DisplayInfo.txt";
     Screen(int length, int breadth,int signal_loc);
+    //Screen(Screen &oldScreen);
+    tuple<int,int,int,string,float> ScreenInfo();
+    vector<Vehicle> Vehicles();
     void Print();
     void PrintDisplayInfo();
+    void RunDisplay(float FutureTime,float framelength);
+    void RunDisplayFor(int delta_time);
     void addVehicle(Vehicle vehicle);
     void cleanScreen();
     bool isEmpty();

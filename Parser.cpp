@@ -93,44 +93,42 @@ int main()
         }
         if(word=="Signal"){
         file >> word;
-        simulation_file << "Signal " << word << " " << timestamp << '\n'; 
-        timestamp++;
+        simulation_file << "Signal " << word << " " << '\n'; 
         }    
         if(word=="CAR"){
           file >> word;
           simulation_file << "CAR" << " ";
-          simulation_file << word << " " << timestamp << '\n';
-          timestamp++;
+          simulation_file << word << " " << '\n';
+          //timestamp++;
         }
         if(word=="BIKE"){
           file >> word;
           simulation_file << "BIKE" << " ";
-          simulation_file << word << " " << timestamp << '\n';
-          timestamp++;
+          simulation_file << word << " " << '\n';
+          //timestamp++;
         }              
         if(word=="TRUCK"){
           file >> word;
           simulation_file << "TRUCK" << " ";
-          simulation_file << word << " " << timestamp << '\n';
-          timestamp++;
+          simulation_file << word << " " << '\n';
+          //timestamp++;
         }  
         if(word=="BUS"){
           file >> word;
           simulation_file << "BUS" << " ";
-          simulation_file << word << " " << timestamp << '\n';
-          timestamp++;
+          simulation_file << word << " " << '\n';
+          //timestamp++;
         }
         if(word=="AUTO"){
           file >> word;
           simulation_file << "AUTO" << " ";
-          simulation_file << word << " " << timestamp << '\n';
-          timestamp++;
+          simulation_file << word << " " << '\n';
+          //timestamp++;
         }            
         if(word=="Pass"){
         file >> word;
-        timestamp += stoi(word);
-        simulation_file << "PASS " << timestamp << '\n';
-        timestamp++;
+        simulation_file << "PASS " << word << '\n';
+        //timestamp++;
         }
         if(word=="END"){
         simulation_file << word; 
