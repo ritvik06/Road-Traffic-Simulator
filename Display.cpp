@@ -6,6 +6,7 @@
 #include<stdexcept>
 #include<cstdlib>
 #include<tuple>
+#include<cmath>
 //#include<chrono>
 //#include<thread>
 #include <unistd.h>
@@ -275,16 +276,20 @@ void Simulation()
 
     //exit(0);
 }
-
-void RectangleTL(float X,float Y,float L,float B,char colour)
+void Scaled_Circle(float X,float Y,float R,char colour)
 {
-	// (X,Y) is Center Coordinate. L = Length ; B = Breadth The remaining coordinates are (X+L/2,Y), (X+L/2,Y-B/2) (X,Y-B/2)
+    // (X,Y) is Center Coordinate. R = Radius 
     // Length Scaler and Breadth Scaler Automatically fixes the coordinates and scales everything correctly.
+    
     switch(colour)
     {
-        case 'G': glColor3f(0.0,1.0,0.0); //Green
+        case 'l': glColor3f(0.0,0.25,0.0); //Dark Lime
+        break;
+        case 'L': glColor3f(0.0,1.0,0.0); //Lime
         break;
         case 'R': glColor3f(1.0,0.0,0.0); //Red
+        break;
+        case 'r': glColor3f(0.25,0.0,0.0); //Dark Red
         break;
         case 'B': glColor3f(0.0,0.0,1.0); //Blue
         break;
@@ -298,7 +303,65 @@ void RectangleTL(float X,float Y,float L,float B,char colour)
         break;
         case 'g': glColor3f(0.15,0.15,0.15); //grey
         break;
+        case 'G': glColor3f(0.5,1.0,0.0); //Green
+        break;
+        case 'C': glColor3f(1.0,0.2,0.2); //Crimson
+        break;
+        case 'S': glColor3f(0.75,0.7,0.5); //Sand
+        break;
+        case ' ': glColor3f(0.0,0.0,0.0); //Black
+        break;
+        
+        default: glColor3f(0.0,1.0,1.0); //Aqua
+	}
+    
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f((X-X_Scaler)*Length_Scaler,(Y-Y_Scaler)*-1*Breadth_Scaler);
 
+    for (float angle = 1.0f; angle < 361.0f; angle += 0.2)
+    {
+        float x = (X + sin(angle)*R - X_Scaler)*Length_Scaler;
+        float y = (Y + cos(angle)*R - Y_Scaler)*Breadth_Scaler*-1;
+        glVertex2f(x,y);
+    }
+
+    glEnd();
+}
+void RectangleTL(float X,float Y,float L,float B,char colour)
+{
+	// (X,Y) is Center Coordinate. L = Length ; B = Breadth The remaining coordinates are (X+L/2,Y), (X+L/2,Y-B/2) (X,Y-B/2)
+    // Length Scaler and Breadth Scaler Automatically fixes the coordinates and scales everything correctly.
+    switch(colour)
+    {
+        case 'l': glColor3f(0.0,0.25,0.0); //Dark Lime
+        break;
+        case 'L': glColor3f(0.0,1.0,0.0); //Lime
+        break;
+        case 'R': glColor3f(1.0,0.0,0.0); //Red
+        break;
+        case 'r': glColor3f(0.25,0.0,0.0); //Dark Red
+        break;
+        case 'B': glColor3f(0.0,0.0,1.0); //Blue
+        break;
+        case 'W': glColor3f(1.0,1.0,1.0); //White
+        break;
+        case 'Y': glColor3f(1.0,1.0,0.0); //Yellow
+        break;
+        case 'M': glColor3f(1.0,0.0,1.0); //Magenta
+        break;
+        case 'P': glColor3f(1.0,0.0,0.5); //Pink
+        break;
+        case 'g': glColor3f(0.15,0.15,0.15); //grey
+        break;
+        case 'G': glColor3f(0.5,1.0,0.0); //Green
+        break;
+        case 'C': glColor3f(1.0,0.2,0.2); //Crimson
+        break;
+        case 'S': glColor3f(0.75,0.7,0.5); //Sand
+        break;
+        case ' ': glColor3f(0.0,0.0,0.0); //Black
+        break;
+        
         default: glColor3f(0.0,1.0,1.0); //Aqua
 	}
     //cout << X << Y << L << B <<endl;
@@ -365,10 +428,22 @@ static void LoadCurrentFrame(int Frame)
     X_Scaler = length/2;
     Y_Scaler = width/2;*/
     //Loading Road Configuration    
+    RectangleTL(-1,1,2,2,'S'); // Load Background
     Scaled_RectangleTL(0,0,length,width,'g'); // Load Road
     Scaled_RectangleTL(position,0,1,width,'W');    // Load Signal Line
-    Scaled_RectangleTL(position,-1,1,1,Signal[0]); // Load Signal Color
-    
+    Scaled_RectangleTL(position-0.5,-1,2,1,'Y'); // Load Signal Box 
+        
+    if(Signal[0] == 'R')
+    {
+        Scaled_Circle(position,-0.5,0.45,' '); // Load Signal GREEN Color
+        Scaled_Circle(position+1,-0.5,0.45,'R'); // Load Signal RED Color
+    }
+    else
+    {
+        Scaled_Circle(position,-0.5,0.45,'L'); // Load Signal GREEN Color
+        Scaled_Circle(position+1,-0.5,0.45,' '); // Load Signal RED Color
+    }
+        
     vector<Vehicle> Vehicles = screen.Vehicles();
     for (int i = 0; i < Vehicles.size(); i++)
         {
