@@ -78,8 +78,8 @@ Time Elapsed :- 3s      SIGNAL: RED
 A BLUE bus is added.
 ------------------------------------------------------------
                                X                            
-   b b                         X                            
-                               X                            
+ B b b                         X                            
+ B                             X                            
      C C                       X                            
      C C                       X                            
                                X                            
@@ -96,9 +96,9 @@ A BLUE bus is added.
 Time Elapsed :- 4s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-     b b                       X                            
- B                             X                            
- B     C C                     X                            
+ B B b b                       X                            
+ B B                           X                            
+       C C                     X                            
        C C                     X                            
                                X                            
                                X                            
@@ -114,9 +114,9 @@ Time Elapsed :- 4s      SIGNAL: RED
 Time Elapsed :- 5s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-       b b                     X                            
- B B                           X                            
- B B     C C                   X                            
+ B B B b b                     X                            
+ B B B                         X                            
+         C C                   X                            
          C C                   X                            
                                X                            
                                X                            
@@ -132,9 +132,9 @@ Time Elapsed :- 5s      SIGNAL: RED
 Time Elapsed :- 6s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-         b b                   X                            
- B B B                         X                            
- B B B     C C                 X                            
+   B B B b b                   X                            
+   B B B                       X                            
+           C C                 X                            
            C C                 X                            
                                X                            
                                X                            
@@ -150,9 +150,9 @@ Time Elapsed :- 6s      SIGNAL: RED
 Time Elapsed :- 7s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-           b b                 X                            
-   B B B                       X                            
-   B B B     C C               X                            
+     B B B b b                 X                            
+     B B B                     X                            
+             C C               X                            
              C C               X                            
                                X                            
                                X                            
@@ -168,9 +168,9 @@ Time Elapsed :- 7s      SIGNAL: RED
 Time Elapsed :- 8s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-             b b               X                            
-     B B B                     X                            
-     B B B     C C             X                            
+       B B B b b               X                            
+       B B B                   X                            
+               C C             X                            
                C C             X                            
                                X                            
                                X                            
@@ -186,9 +186,9 @@ Time Elapsed :- 8s      SIGNAL: RED
 Time Elapsed :- 9s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-               b b             X                            
-       B B B                   X                            
-       B B B     C C           X                            
+         B B B b b             X                            
+         B B B                 X                            
+                 C C           X                            
                  C C           X                            
                                X                            
                                X                            
@@ -204,9 +204,9 @@ Time Elapsed :- 9s      SIGNAL: RED
 Time Elapsed :- 10s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                 b b           X                            
-         B B B                 X                            
-         B B B     C C         X                            
+           B B B b b           X                            
+           B B B               X                            
+                   C C         X                            
                    C C         X                            
                                X                            
                                X                            
@@ -222,9 +222,9 @@ Time Elapsed :- 10s      SIGNAL: RED
 Time Elapsed :- 11s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                   b b         X                            
-           B B B               X                            
-           B B B     C C       X                            
+             B B B b b         X                            
+             B B B             X                            
+                     C C       X                            
                      C C       X                            
                                X                            
                                X                            
@@ -240,9 +240,9 @@ Time Elapsed :- 11s      SIGNAL: RED
 Time Elapsed :- 12s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                     b b       X                            
-             B B B             X                            
-             B B B     C C     X                            
+               B B B b b       X                            
+               B B B           X                            
+                       C C     X                            
                        C C     X                            
                                X                            
                                X                            
@@ -258,9 +258,9 @@ Time Elapsed :- 12s      SIGNAL: RED
 Time Elapsed :- 13s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                       b b     X                            
-               B B B           X                            
-               B B B     C C   X                            
+                 B B B b b     X                            
+                 B B B         X                            
+                         C C   X                            
                          C C   X                            
                                X                            
                                X                            
@@ -276,9 +276,9 @@ Time Elapsed :- 13s      SIGNAL: RED
 Time Elapsed :- 14s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                         b b   X                            
-                 B B B         X                            
-                 B B B     C C X                            
+                   B B B b b   X                            
+                   B B B       X                            
+                           C C X                            
                            C C X                            
                                X                            
                                X                            
@@ -294,9 +294,9 @@ Time Elapsed :- 14s      SIGNAL: RED
 Time Elapsed :- 15s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                           b b X                            
-                   B B B       X                            
-                   B B B   C C X                            
+                     B B B b b X                            
+                     B B B     X                            
+                           C C X                            
                            C C X                            
                                X                            
                                X                            
@@ -364,12 +364,13 @@ Time Elapsed :- 18s      SIGNAL: RED
                                X                            
 ------------------------------------------------------------
 Time Elapsed :- 19s      SIGNAL: RED
+A RED car is added.
 ------------------------------------------------------------
                                X                            
                            b b X                            
                                X                            
-                           C C X                            
-                           C C X                            
+ C                         C C X                            
+ C                         C C X                            
                      B B B     X                            
                      B B B     X                            
                                X                            
@@ -382,13 +383,13 @@ Time Elapsed :- 19s      SIGNAL: RED
                                X                            
 ------------------------------------------------------------
 Time Elapsed :- 20s      SIGNAL: RED
-A RED car is added.
+A YELLO bike is added.
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                               X                            
- C                         C C X                            
- C                         C C X                            
+ b                             X                            
+ C C                       C C X                            
+ C C                       C C X                            
                        B B B   X                            
                        B B B   X                            
                                X                            
@@ -401,25 +402,6 @@ A RED car is added.
                                X                            
 ------------------------------------------------------------
 Time Elapsed :- 21s      SIGNAL: RED
-A YELLO bike is added.
-------------------------------------------------------------
-                               X                            
-                           b b X                            
- b                             X                            
- C C                       C C X                            
- C C                       C C X                            
-                         B B B X                            
-                         B B B X                            
-                               X                            
-                               X                            
-                               X                            
-                               X                            
-                               X                            
-                           b b X                            
-                               X                            
-                               X                            
-------------------------------------------------------------
-Time Elapsed :- 22s      SIGNAL: RED
 A PINK bike is added.
 ------------------------------------------------------------
                                X                            
@@ -438,7 +420,7 @@ A PINK bike is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 23s      SIGNAL: RED
+Time Elapsed :- 22s      SIGNAL: RED
 A MAGENTA bus is added.
 ------------------------------------------------------------
                                X                            
@@ -457,7 +439,7 @@ A MAGENTA bus is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 24s      SIGNAL: RED
+Time Elapsed :- 23s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
@@ -466,8 +448,26 @@ Time Elapsed :- 24s      SIGNAL: RED
        C C                 C C X                            
                          B B B X                            
                          B B B X                            
-   b b                         X                            
+ B b b                         X                            
+ B                             X                            
                                X                            
+                               X                            
+                               X                            
+                           b b X                            
+                               X                            
+                               X                            
+------------------------------------------------------------
+Time Elapsed :- 24s      SIGNAL: RED
+------------------------------------------------------------
+                               X                            
+                           b b X                            
+       b b                     X                            
+         C C               C C X                            
+         C C               C C X                            
+                         B B B X                            
+                         B B B X                            
+ B B b b                       X                            
+ B B                           X                            
                                X                            
                                X                            
                                X                            
@@ -479,14 +479,14 @@ Time Elapsed :- 25s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-       b b                     X                            
-         C C               C C X                            
-         C C               C C X                            
+         b b                   X                            
+           C C             C C X                            
+           C C             C C X                            
                          B B B X                            
                          B B B X                            
-     b b                       X                            
- B                             X                            
- B                             X                            
+ B B B b b                     X                            
+ B B B                         X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -497,14 +497,14 @@ Time Elapsed :- 26s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-         b b                   X                            
-           C C             C C X                            
-           C C             C C X                            
+           b b                 X                            
+             C C           C C X                            
+             C C           C C X                            
                          B B B X                            
                          B B B X                            
-       b b                     X                            
- B B                           X                            
- B B                           X                            
+   B B B b b                   X                            
+   B B B                       X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -515,14 +515,14 @@ Time Elapsed :- 27s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-           b b                 X                            
-             C C           C C X                            
-             C C           C C X                            
+             b b               X                            
+               C C         C C X                            
+               C C         C C X                            
                          B B B X                            
                          B B B X                            
-         b b                   X                            
- B B B                         X                            
- B B B                         X                            
+     B B B b b                 X                            
+     B B B                     X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -533,14 +533,14 @@ Time Elapsed :- 28s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-             b b               X                            
-               C C         C C X                            
-               C C         C C X                            
+               b b             X                            
+                 C C       C C X                            
+                 C C       C C X                            
                          B B B X                            
                          B B B X                            
-           b b                 X                            
-   B B B                       X                            
-   B B B                       X                            
+       B B B b b               X                            
+       B B B                   X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -551,14 +551,14 @@ Time Elapsed :- 29s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-               b b             X                            
-                 C C       C C X                            
-                 C C       C C X                            
+                 b b           X                            
+                   C C     C C X                            
+                   C C     C C X                            
                          B B B X                            
                          B B B X                            
-             b b               X                            
-     B B B                     X                            
-     B B B                     X                            
+         B B B b b             X                            
+         B B B                 X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -569,14 +569,14 @@ Time Elapsed :- 30s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                 b b           X                            
-                   C C     C C X                            
-                   C C     C C X                            
+                   b b         X                            
+                     C C   C C X                            
+                     C C   C C X                            
                          B B B X                            
                          B B B X                            
-               b b             X                            
-       B B B                   X                            
-       B B B                   X                            
+           B B B b b           X                            
+           B B B               X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -587,14 +587,14 @@ Time Elapsed :- 31s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                   b b         X                            
-                     C C   C C X                            
-                     C C   C C X                            
+                     b b       X                            
+                       C C C C X                            
+                       C C C C X                            
                          B B B X                            
                          B B B X                            
-                 b b           X                            
-         B B B                 X                            
-         B B B                 X                            
+             B B B b b         X                            
+             B B B             X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -605,14 +605,14 @@ Time Elapsed :- 32s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                     b b       X                            
+                       b b     X                            
                        C C C C X                            
                        C C C C X                            
                          B B B X                            
                          B B B X                            
-                   b b         X                            
-           B B B               X                            
-           B B B               X                            
+               B B B b b       X                            
+               B B B           X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -623,14 +623,14 @@ Time Elapsed :- 33s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                       b b     X                            
+                         b b   X                            
                        C C C C X                            
                        C C C C X                            
                          B B B X                            
                          B B B X                            
-                     b b       X                            
-             B B B             X                            
-             B B B             X                            
+                 B B B b b     X                            
+                 B B B         X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -641,14 +641,14 @@ Time Elapsed :- 34s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                         b b   X                            
+                           b b X                            
                        C C C C X                            
                        C C C C X                            
                          B B B X                            
                          B B B X                            
-                       b b     X                            
-               B B B           X                            
-               B B B           X                            
+                   B B B b b   X                            
+                   B B B       X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -659,14 +659,14 @@ Time Elapsed :- 35s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                            b b X                            
-                           b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
-                         b b   X                            
-                 B B B         X                            
-                 B B B         X                            
+                     B B B b b X                            
+                     B B B     X                            
+                               X                            
                                X                            
                                X                            
                            b b X                            
@@ -676,15 +676,15 @@ Time Elapsed :- 35s      SIGNAL: RED
 Time Elapsed :- 36s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
-                           b b X                            
                        C C b b X                            
-                       C C C C X                            
+                       C C b b X                            
+                           C C X                            
                            C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
-                   B B B       X                            
-                   B B B       X                            
+                     B B B     X                            
+                     B B B     X                            
                                X                            
                                X                            
                            b b X                            
@@ -693,16 +693,16 @@ Time Elapsed :- 36s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 37s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                       C C     X                            
                        C C b b X                            
-                       C C b b X                            
+                           b b X                            
                            C C X                            
                            C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
-                     B B B     X                            
-                     B B B     X                            
+                       B B B   X                            
+                       B B B   X                            
                                X                            
                                X                            
                            b b X                            
@@ -710,49 +710,13 @@ Time Elapsed :- 37s      SIGNAL: RED
                                X                            
 ------------------------------------------------------------
 Time Elapsed :- 38s      SIGNAL: RED
-------------------------------------------------------------
-                               X                            
-                       C C b b X                            
-                       C C b b X                            
-                           C C X                            
-                           C C X                            
-                         B B B X                            
-                         B B B X                            
-                           b b X                            
-                       B B B   X                            
-                       B B B   X                            
-                               X                            
-                               X                            
-                           b b X                            
-                               X                            
-                               X                            
-------------------------------------------------------------
-Time Elapsed :- 39s      SIGNAL: RED
-------------------------------------------------------------
-                               X                            
-                           b b X                            
-                       C C b b X                            
-                       C C C C X                            
-                           C C X                            
-                         B B B X                            
-                         B B B X                            
-                           b b X                            
-                         B B B X                            
-                         B B B X                            
-                               X                            
-                               X                            
-                           b b X                            
-                               X                            
-                               X                            
-------------------------------------------------------------
-Time Elapsed :- 40s      SIGNAL: RED
 A GREEN car is added.
 ------------------------------------------------------------
-                               X                            
+                       C C     X                            
+                       C C b b X                            
                            b b X                            
-                           b b X                            
-                       C C C C X                            
-                       C C C C X                            
+                           C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -764,14 +728,14 @@ A GREEN car is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 41s      SIGNAL: RED
+Time Elapsed :- 39s      SIGNAL: RED
 A BLUE bike is added.
 ------------------------------------------------------------
                                X                            
-                           b b X                            
-                           b b X                            
-                       C C C C X                            
-                       C C C C X                            
+                       C C b b X                            
+                       C C b b X                            
+                           C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -783,11 +747,11 @@ A BLUE bike is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 42s      SIGNAL: RED
+Time Elapsed :- 40s      SIGNAL: RED
 A GREEN truck is added.
 ------------------------------------------------------------
-                               X                            
-                           b b X                            
+ T                             X                            
+ T                         b b X                            
                        C C b b X                            
                        C C C C X                            
                            C C X                            
@@ -802,14 +766,14 @@ A GREEN truck is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 43s      SIGNAL: RED
+Time Elapsed :- 41s      SIGNAL: RED
 A BLUE bus is added.
 ------------------------------------------------------------
- T                             X                            
- T                     C C b b X                            
-                       C C b b X                            
-                           C C X                            
-                           C C X                            
+ T T                           X                            
+ T T                       b b X                            
+                           b b X                            
+                       C C C C X                            
+                       C C C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -821,13 +785,13 @@ A BLUE bus is added.
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 44s      SIGNAL: RED
+Time Elapsed :- 42s      SIGNAL: RED
 ------------------------------------------------------------
- T T                           X                            
- T T                   C C b b X                            
-                       C C b b X                            
-                           C C X                            
-                           C C X                            
+ T T T                         X                            
+ T T T                     b b X                            
+                           b b X                            
+                       C C C C X                            
+                       C C C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -839,10 +803,10 @@ Time Elapsed :- 44s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 45s      SIGNAL: RED
+Time Elapsed :- 43s      SIGNAL: RED
 ------------------------------------------------------------
- T T T                         X                            
- T T T                     b b X                            
+ T T T T                       X                            
+ T T T T                   b b X                            
                        C C b b X                            
                        C C C C X                            
                            C C X                            
@@ -857,13 +821,13 @@ Time Elapsed :- 45s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 46s      SIGNAL: RED
+Time Elapsed :- 44s      SIGNAL: RED
 ------------------------------------------------------------
- T T T T                       X                            
- T T T T                   b b X                            
-                           b b X                            
-                       C C C C X                            
-                       C C C C X                            
+   T T T T                     X                            
+   T T T T             C C b b X                            
+                       C C b b X                            
+                           C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -875,13 +839,13 @@ Time Elapsed :- 46s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 47s      SIGNAL: RED
+Time Elapsed :- 45s      SIGNAL: RED
 ------------------------------------------------------------
-   T T T T                     X                            
-   T T T T                 b b X                            
+     T T T T           C C     X                            
+     T T T T           C C b b X                            
                            b b X                            
-                       C C C C X                            
-                       C C C C X                            
+                           C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -893,12 +857,12 @@ Time Elapsed :- 47s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 48s      SIGNAL: RED
+Time Elapsed :- 46s      SIGNAL: RED
 ------------------------------------------------------------
-     T T T T                   X                            
-     T T T T               b b X                            
-                       C C b b X                            
-                       C C C C X                            
+       T T T T         C C     X                            
+       T T T T         C C b b X                            
+                           b b X                            
+                           C C X                            
                            C C X                            
                          B B B X                            
                          B B B X                            
@@ -911,10 +875,10 @@ Time Elapsed :- 48s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 49s      SIGNAL: RED
+Time Elapsed :- 47s      SIGNAL: RED
 ------------------------------------------------------------
-       T T T T                 X                            
-       T T T T         C C b b X                            
+         T T T T               X                            
+         T T T T       C C b b X                            
                        C C b b X                            
                            C C X                            
                            C C X                            
@@ -929,12 +893,12 @@ Time Elapsed :- 49s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 50s      SIGNAL: RED
+Time Elapsed :- 48s      SIGNAL: RED
 ------------------------------------------------------------
-         T T T T               X                            
-         T T T T       C C b b X                            
+           T T T T             X                            
+           T T T T         b b X                            
                        C C b b X                            
-                           C C X                            
+                       C C C C X                            
                            C C X                            
                          B B B X                            
                          B B B X                            
@@ -947,13 +911,13 @@ Time Elapsed :- 50s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 51s      SIGNAL: RED
+Time Elapsed :- 49s      SIGNAL: RED
 ------------------------------------------------------------
-           T T T T             X                            
-           T T T T         b b X                            
-                       C C b b X                            
+             T T T T           X                            
+             T T T T       b b X                            
+                           b b X                            
                        C C C C X                            
-                           C C X                            
+                       C C C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -965,10 +929,10 @@ Time Elapsed :- 51s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 52s      SIGNAL: RED
+Time Elapsed :- 50s      SIGNAL: RED
 ------------------------------------------------------------
-             T T T T           X                            
-             T T T T       b b X                            
+               T T T T         X                            
+               T T T T     b b X                            
                            b b X                            
                        C C C C X                            
                        C C C C X                            
@@ -983,13 +947,13 @@ Time Elapsed :- 52s      SIGNAL: RED
                                X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 53s      SIGNAL: RED
+Time Elapsed :- 51s      SIGNAL: RED
 ------------------------------------------------------------
-               T T T T         X                            
-               T T T T     b b X                            
-                           b b X                            
+                 T T T T       X                            
+                 T T T T   b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -1001,13 +965,13 @@ Time Elapsed :- 53s      SIGNAL: RED
                        C C     X                            
                                X                            
 ------------------------------------------------------------
-Time Elapsed :- 54s      SIGNAL: RED
+Time Elapsed :- 52s      SIGNAL: RED
 ------------------------------------------------------------
-                 T T T T       X                            
-                 T T T T   b b X                            
-                           b b X                            
+                   T T T T     X                            
+                   T T T T b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                            b b X                            
@@ -1019,7 +983,7 @@ Time Elapsed :- 54s      SIGNAL: RED
                        C C     X                            
                        C C     X                            
 ------------------------------------------------------------
-Time Elapsed :- 55s      SIGNAL: RED
+Time Elapsed :- 53s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                    T T T T b b X                            
@@ -1037,7 +1001,7 @@ Time Elapsed :- 55s      SIGNAL: RED
                          C C   X                            
                          C C   X                            
 ------------------------------------------------------------
-Time Elapsed :- 56s      SIGNAL: RED
+Time Elapsed :- 54s      SIGNAL: RED
 ------------------------------------------------------------
                                X                            
                    T T T T b b X                            
@@ -1055,13 +1019,49 @@ Time Elapsed :- 56s      SIGNAL: RED
                            C C X                            
                            C C X                            
 ------------------------------------------------------------
+Time Elapsed :- 55s      SIGNAL: RED
+------------------------------------------------------------
+                   T T T T     X                            
+                   T T T T b b X                            
+                           b b X                            
+                       C C C C X                            
+                       C C C C X                            
+                         B B B X                            
+                         B B B X                            
+                       b b b b X                            
+                         B B B X                            
+                         B B B X                            
+                         B B B X                            
+                         B B B X                            
+                           b b X                            
+                           C C X                            
+                           C C X                            
+------------------------------------------------------------
+Time Elapsed :- 56s      SIGNAL: RED
+------------------------------------------------------------
+                   T T T T     X                            
+                   T T T T b b X                            
+                       C C b b X                            
+                       C C C C X                            
+                           C C X                            
+                         B B B X                            
+                         B B B X                            
+                       b b b b X                            
+                         B B B X                            
+                         B B B X                            
+                         B B B X                            
+                         B B B X                            
+                           b b X                            
+                           C C X                            
+                           C C X                            
+------------------------------------------------------------
 Time Elapsed :- 57s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                        b b b b X                            
@@ -1111,9 +1111,9 @@ Time Elapsed :- 59s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 60s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                           b b X                            
                        C C C C X                            
                        C C C C X                            
                          B B B X                            
@@ -1129,11 +1129,11 @@ Time Elapsed :- 60s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 61s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                        b b b b X                            
@@ -1147,11 +1147,11 @@ Time Elapsed :- 61s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 62s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                        b b b b X                            
@@ -1201,9 +1201,9 @@ Time Elapsed :- 64s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 65s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                           b b X                            
                        C C C C X                            
                        C C C C X                            
                          B B B X                            
@@ -1219,11 +1219,11 @@ Time Elapsed :- 65s      SIGNAL: RED
 ------------------------------------------------------------
 Time Elapsed :- 66s      SIGNAL: RED
 ------------------------------------------------------------
-                               X                            
+                   T T T T     X                            
                    T T T T b b X                            
-                   T T T T b b X                            
+                       C C b b X                            
                        C C C C X                            
-                       C C C C X                            
+                           C C X                            
                          B B B X                            
                          B B B X                            
                        b b b b X                            
@@ -1236,376 +1236,376 @@ Time Elapsed :- 66s      SIGNAL: RED
                            C C X                            
 ------------------------------------------------------------
 Time Elapsed :- 67s      SIGNAL: RED
-------------------------------------------------------------
-                               X                            
-                   T T T T b b X                            
-                   T T T T b b X                            
-                       C C C C X                            
-                       C C C C X                            
-                         B B B X                            
-                         B B B X                            
-                       b b b b X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                           b b X                            
-                           C C X                            
-                           C C X                            
-------------------------------------------------------------
-Time Elapsed :- 68s      SIGNAL: RED
-------------------------------------------------------------
-                               X                            
-                   T T T T b b X                            
-                   T T T T b b X                            
-                       C C C C X                            
-                       C C C C X                            
-                         B B B X                            
-                         B B B X                            
-                       b b b b X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                           b b X                            
-                           C C X                            
-                           C C X                            
-------------------------------------------------------------
-Time Elapsed :- 69s      SIGNAL: RED
-------------------------------------------------------------
-                               X                            
-                   T T T T b b X                            
-                   T T T T b b X                            
-                       C C C C X                            
-                       C C C C X                            
-                         B B B X                            
-                         B B B X                            
-                       b b b b X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                         B B B X                            
-                           b b X                            
-                           C C X                            
-                           C C X                            
-------------------------------------------------------------
-Time Elapsed :- 70s      SIGNAL: RED
 Signal changed to  GREEN
 ------------------------------------------------------------
-                               =                            
+                   T T T T     =                            
                    T T T T   b b                            
-                   T T T T   b b                            
+                       C C   b b                            
                        C C   C C                            
-                       C C   C C                            
-                         B B B =                            
-                         B B B =                            
-                       b b   b b                            
+                             C C                            
+                           B B B                            
+                           B B B                            
+                         b b b b                            
                            B B B                            
                            B B B                            
                            B B B                            
                            B B B                            
                              b b                            
-                           C C =                            
-                           C C =                            
+                             C C                            
+                             C C                            
 ------------------------------------------------------------
-Time Elapsed :- 71s      SIGNAL: GREEN
+Time Elapsed :- 68s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                     T T T T   =                            
                      T T T T   b b                          
-                     T T T T   b b                          
+                         C C   b b                          
                          C C   C C                          
-                         C C   C C                          
-                           B B B                            
-                           B B B                            
-                         b b   b b                          
+                               C C                          
+                             B B B                          
+                             B B B                          
+                           b b b b                          
                              B B B                          
                              B B B                          
                              B B B                          
                              B B B                          
                                b b                          
-                             C C                            
-                             C C                            
+                               C C                          
+                               C C                          
 ------------------------------------------------------------
-Time Elapsed :- 72s      SIGNAL: GREEN
+Time Elapsed :- 69s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                       T T T T =                            
                        T T T T = b b                        
-                       T T T T = b b                        
+                           C C = b b                        
                            C C = C C                        
-                           C C = C C                        
-                             B B B                          
-                             B B B                          
-                           b b = b b                        
+                               = C C                        
+                               B B B                        
+                               B B B                        
+                             b b b b                        
                                B B B                        
                                B B B                        
                                B B B                        
                                B B B                        
                                = b b                        
-                               C C                          
-                               C C                          
+                               = C C                        
+                               = C C                        
 ------------------------------------------------------------
-Time Elapsed :- 73s      SIGNAL: GREEN
+Time Elapsed :- 70s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                         T T T T                            
                          T T T T   b b                      
-                         T T T T   b b                      
+                             C C   b b                      
                              C C   C C                      
-                             C C   C C                      
-                               B B B                        
-                               B B B                        
-                             b b   b b                      
+                               =   C C                      
+                               = B B B                      
+                               = B B B                      
+                               b b b b                      
                                = B B B                      
                                = B B B                      
                                = B B B                      
                                = B B B                      
                                =   b b                      
-                               = C C                        
-                               = C C                        
+                               =   C C                      
+                               =   C C                      
 ------------------------------------------------------------
-Time Elapsed :- 74s      SIGNAL: GREEN
+Time Elapsed :- 71s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                           T T T T                          
                            T T T T   b b                    
-                           T T T T   b b                    
+                               C C   b b                    
                                C C   C C                    
-                               C C   C C                    
-                               = B B B                      
-                               = B B B                      
-                               b b   b b                    
+                               =     C C                    
+                               =   B B B                    
+                               =   B B B                    
+                               = b b b b                    
                                =   B B B                    
                                =   B B B                    
                                =   B B B                    
                                =   B B B                    
                                =     b b                    
-                               =   C C                      
-                               =   C C                      
+                               =     C C                    
+                               =     C C                    
 ------------------------------------------------------------
-Time Elapsed :- 75s      SIGNAL: GREEN
+Time Elapsed :- 72s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                             T T T T                        
                              T T T T   b b                  
-                             T T T T   b b                  
+                               = C C   b b                  
                                = C C   C C                  
-                               = C C   C C                  
-                               =   B B B                    
-                               =   B B B                    
-                               = b b   b b                  
+                               =       C C                  
+                               =     B B B                  
+                               =     B B B                  
+                               =   b b b b                  
                                =     B B B                  
                                =     B B B                  
                                =     B B B                  
                                =     B B B                  
                                =       b b                  
-                               =     C C                    
-                               =     C C                    
+                               =       C C                  
+                               =       C C                  
 ------------------------------------------------------------
-Time Elapsed :- 76s      SIGNAL: GREEN
+Time Elapsed :- 73s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               T T T T                      
                                T T T T   b b                
-                               T T T T   b b                
+                               =   C C   b b                
                                =   C C   C C                
-                               =   C C   C C                
-                               =     B B B                  
-                               =     B B B                  
-                               =   b b   b b                
+                               =         C C                
+                               =       B B B                
+                               =       B B B                
+                               =     b b b b                
                                =       B B B                
                                =       B B B                
                                =       B B B                
                                =       B B B                
                                =         b b                
-                               =       C C                  
-                               =       C C                  
+                               =         C C                
+                               =         C C                
 ------------------------------------------------------------
-Time Elapsed :- 77s      SIGNAL: GREEN
+Time Elapsed :- 74s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               = T T T T                    
                                = T T T T   b b              
-                               = T T T T   b b              
+                               =     C C   b b              
                                =     C C   C C              
-                               =     C C   C C              
-                               =       B B B                
-                               =       B B B                
-                               =     b b   b b              
+                               =           C C              
+                               =         B B B              
+                               =         B B B              
+                               =       b b b b              
                                =         B B B              
                                =         B B B              
                                =         B B B              
                                =         B B B              
                                =           b b              
-                               =         C C                
-                               =         C C                
+                               =           C C              
+                               =           C C              
 ------------------------------------------------------------
-Time Elapsed :- 78s      SIGNAL: GREEN
+Time Elapsed :- 75s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =   T T T T                  
                                =   T T T T   b b            
-                               =   T T T T   b b            
+                               =       C C   b b            
                                =       C C   C C            
-                               =       C C   C C            
-                               =         B B B              
-                               =         B B B              
-                               =       b b   b b            
+                               =             C C            
+                               =           B B B            
+                               =           B B B            
+                               =         b b b b            
                                =           B B B            
                                =           B B B            
                                =           B B B            
                                =           B B B            
                                =             b b            
-                               =           C C              
-                               =           C C              
+                               =             C C            
+                               =             C C            
 ------------------------------------------------------------
-Time Elapsed :- 79s      SIGNAL: GREEN
+Time Elapsed :- 76s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =     T T T T                
                                =     T T T T   b b          
-                               =     T T T T   b b          
+                               =         C C   b b          
                                =         C C   C C          
-                               =         C C   C C          
-                               =           B B B            
-                               =           B B B            
-                               =         b b   b b          
+                               =               C C          
+                               =             B B B          
+                               =             B B B          
+                               =           b b b b          
                                =             B B B          
                                =             B B B          
                                =             B B B          
                                =             B B B          
                                =               b b          
-                               =             C C            
-                               =             C C            
+                               =               C C          
+                               =               C C          
 ------------------------------------------------------------
-Time Elapsed :- 80s      SIGNAL: GREEN
+Time Elapsed :- 77s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =       T T T T              
                                =       T T T T   b b        
-                               =       T T T T   b b        
+                               =           C C   b b        
                                =           C C   C C        
-                               =           C C   C C        
-                               =             B B B          
-                               =             B B B          
-                               =           b b   b b        
+                               =                 C C        
+                               =               B B B        
+                               =               B B B        
+                               =             b b b b        
                                =               B B B        
                                =               B B B        
                                =               B B B        
                                =               B B B        
                                =                 b b        
-                               =               C C          
-                               =               C C          
+                               =                 C C        
+                               =                 C C        
 ------------------------------------------------------------
-Time Elapsed :- 81s      SIGNAL: GREEN
+Time Elapsed :- 78s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =         T T T T            
                                =         T T T T   b b      
-                               =         T T T T   b b      
+                               =             C C   b b      
                                =             C C   C C      
-                               =             C C   C C      
-                               =               B B B        
-                               =               B B B        
-                               =             b b   b b      
+                               =                   C C      
+                               =                 B B B      
+                               =                 B B B      
+                               =               b b b b      
                                =                 B B B      
                                =                 B B B      
                                =                 B B B      
                                =                 B B B      
                                =                   b b      
-                               =                 C C        
-                               =                 C C        
+                               =                   C C      
+                               =                   C C      
 ------------------------------------------------------------
-Time Elapsed :- 82s      SIGNAL: GREEN
+Time Elapsed :- 79s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =           T T T T          
                                =           T T T T   b b    
-                               =           T T T T   b b    
+                               =               C C   b b    
                                =               C C   C C    
-                               =               C C   C C    
-                               =                 B B B      
-                               =                 B B B      
-                               =               b b   b b    
+                               =                     C C    
+                               =                   B B B    
+                               =                   B B B    
+                               =                 b b b b    
                                =                   B B B    
                                =                   B B B    
                                =                   B B B    
                                =                   B B B    
                                =                     b b    
-                               =                   C C      
-                               =                   C C      
+                               =                     C C    
+                               =                     C C    
 ------------------------------------------------------------
-Time Elapsed :- 83s      SIGNAL: GREEN
+Time Elapsed :- 80s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =             T T T T        
                                =             T T T T   b b  
-                               =             T T T T   b b  
+                               =                 C C   b b  
                                =                 C C   C C  
-                               =                 C C   C C  
-                               =                   B B B    
-                               =                   B B B    
-                               =                 b b   b b  
+                               =                       C C  
+                               =                     B B B  
+                               =                     B B B  
+                               =                   b b b b  
                                =                     B B B  
                                =                     B B B  
                                =                     B B B  
                                =                     B B B  
                                =                       b b  
-                               =                     C C    
-                               =                     C C    
+                               =                       C C  
+                               =                       C C  
 ------------------------------------------------------------
-Time Elapsed :- 84s      SIGNAL: GREEN
+Time Elapsed :- 81s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =               T T T T      
                                =               T T T T   b b
-                               =               T T T T   b b
+                               =                   C C   b b
                                =                   C C   C C
-                               =                   C C   C C
-                               =                     B B B  
-                               =                     B B B  
-                               =                   b b   b b
+                               =                         C C
+                               =                       B B B
+                               =                       B B B
+                               =                     b b b b
                                =                       B B B
                                =                       B B B
                                =                       B B B
                                =                       B B B
                                =                         b b
-                               =                       C C  
-                               =                       C C  
+                               =                         C C
+                               =                         C C
 ------------------------------------------------------------
-Time Elapsed :- 85s      SIGNAL: GREEN
+Time Elapsed :- 82s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
+                               =                 T T T T    
                                =                 T T T T   b
-                               =                 T T T T   b
+                               =                     C C   b
                                =                     C C   C
-                               =                     C C   C
-                               =                       B B B
-                               =                       B B B
-                               =                     b b   b
+                               =                           C
+                               =                         B B
+                               =                         B B
+                               =                       b b b
                                =                         B B
                                =                         B B
                                =                         B B
                                =                         B B
                                =                           b
-                               =                         C C
-                               =                         C C
+                               =                           C
+                               =                           C
 ------------------------------------------------------------
-Time Elapsed :- 86s      SIGNAL: GREEN
+Time Elapsed :- 83s      SIGNAL: GREEN
 ------------------------------------------------------------
-                               =                            
                                =                   T T T T  
                                =                   T T T T  
                                =                       C C  
                                =                       C C  
-                               =                         B B
-                               =                         B B
-                               =                       b b  
-                               =                           B
-                               =                           B
-                               =                           B
-                               =                           B
                                =                            
-                               =                           C
-                               =                           C
-------------------------------------------------------------
-Time Elapsed :- 87s      SIGNAL: GREEN
-------------------------------------------------------------
-                               =                            
-                               =                     T T T T
-                               =                     T T T T
-                               =                         C C
-                               =                         C C
                                =                           B
                                =                           B
                                =                         b b
+                               =                           B
+                               =                           B
+                               =                           B
+                               =                           B
+                               =                            
+                               =                            
+                               =                            
+------------------------------------------------------------
+Time Elapsed :- 84s      SIGNAL: GREEN
+------------------------------------------------------------
+                               =                     T T T T
+                               =                     T T T T
+                               =                         C C
+                               =                         C C
+                               =                            
+                               =                            
+                               =                            
+                               =                           b
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+------------------------------------------------------------
+Time Elapsed :- 85s      SIGNAL: GREEN
+------------------------------------------------------------
+                               =                       T T T
+                               =                       T T T
+                               =                           C
+                               =                           C
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+------------------------------------------------------------
+Time Elapsed :- 86s      SIGNAL: GREEN
+------------------------------------------------------------
+                               =                         T T
+                               =                         T T
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+------------------------------------------------------------
+Time Elapsed :- 87s      SIGNAL: GREEN
+------------------------------------------------------------
+                               =                           T
+                               =                           T
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
                                =                            
                                =                            
                                =                            
@@ -1617,13 +1617,13 @@ Time Elapsed :- 87s      SIGNAL: GREEN
 Time Elapsed :- 88s      SIGNAL: GREEN
 ------------------------------------------------------------
                                =                            
-                               =                       T T T
-                               =                       T T T
-                               =                           C
-                               =                           C
                                =                            
                                =                            
-                               =                           b
+                               =                            
+                               =                            
+                               =                            
+                               =                            
+                               =                            
                                =                            
                                =                            
                                =                            
@@ -1633,58 +1633,4 @@ Time Elapsed :- 88s      SIGNAL: GREEN
                                =                            
 ------------------------------------------------------------
 Time Elapsed :- 89s      SIGNAL: GREEN
-------------------------------------------------------------
-                               =                            
-                               =                         T T
-                               =                         T T
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-------------------------------------------------------------
-Time Elapsed :- 90s      SIGNAL: GREEN
-------------------------------------------------------------
-                               =                            
-                               =                           T
-                               =                           T
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-------------------------------------------------------------
-Time Elapsed :- 91s      SIGNAL: GREEN
-------------------------------------------------------------
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-                               =                            
-------------------------------------------------------------
-Time Elapsed :- 92s      SIGNAL: GREEN
 Simulation #1 has ended.

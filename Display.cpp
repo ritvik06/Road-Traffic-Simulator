@@ -6,14 +6,29 @@
 #include<stdexcept>
 #include<cstdlib>
 #include<tuple>
+//#include<chrono>
+//#include<thread>
+#include <unistd.h>
 #include <GL/glut.h>
 #include <stdlib.h>
 #include "Vehicle.hpp"
 #include "Screen.hpp"
 
 //using namespace std;
-
-float Length_Scaler = 1, Breadth_Scaler = 1;
+//new coordinates have to be such that pixels work
+// X pixels by Y pixels. I am representing the array such that each array box is a square. My sample screen is 30 by 15 .
+// X pixels are -1 to 1. Meaning X/20 pixels per 0.1 
+// Y pixels are -1 to 1. Meaning Y/20 pixels per 0.1 
+// Let us make one square of a size of S pixels. 
+// That means length is L X S = SL pixels and breadth of road is B X S = SB pixels.
+// Screen_X = SL pixels.
+// Screen_Y = SB + Y_Buffer;
+float Square_Size = 50; //S
+float Screen_X = 0;
+float Screen_Y = 0;
+float Y_Buffer = 200; // Buffer Pixels for Displaying extra stuff like grass stats or whatever.    
+// Length Scaler is 2/L and Breadth Scaler is 2/(B + Y_Buffer/S)
+float Length_Scaler = 0, Breadth_Scaler = 0;
 float X_Scaler = 0, Y_Scaler = 0;
 vector<Screen> ScreenFrame;
 int Frame = 0;
@@ -68,8 +83,10 @@ void Simulation()
         }
     }
 
-    Length_Scaler = 2/length;
-    Breadth_Scaler = -2/width;
+    Screen_X = Square_Size * length;
+    Screen_Y = Square_Size * width + Y_Buffer;
+    Length_Scaler = 2*Square_Size/Screen_X;
+    Breadth_Scaler = 2*Square_Size/Screen_Y;
     X_Scaler = length/2;
     Y_Scaler = width/2;
 
@@ -259,7 +276,7 @@ void Simulation()
     //exit(0);
 }
 
-void rectangle(float X,float Y,float L,float B,char colour)
+void RectangleTL(float X,float Y,float L,float B,char colour)
 {
 	// (X,Y) is Center Coordinate. L = Length ; B = Breadth The remaining coordinates are (X+L/2,Y), (X+L/2,Y-B/2) (X,Y-B/2)
     // Length Scaler and Breadth Scaler Automatically fixes the coordinates and scales everything correctly.
@@ -286,25 +303,41 @@ void rectangle(float X,float Y,float L,float B,char colour)
 	}
     //cout << X << Y << L << B <<endl;
     
+    //X = (X-X_Scaler)*Length_Scaler;
+    //Y = (Y-Y_Scaler)*Breadth_Scaler;
+    //L = L*Length_Scaler;
+    //B = B*Breadth_Scaler;
+    //cout << X << Y << L << B <<endl;
+    glBegin(GL_QUADS);
+    /*    glVertex2f(X-L/2,Y+B/2); // Top Left
+        glVertex2f(X+L/2,Y+B/2); // Top Right 
+        glVertex2f(X+L/2,Y-B/2); // Bottom Right
+        glVertex2f(X-L/2,Y-B/2); // Bottom Left */
+        glVertex2f(X,Y); // Top Left
+        glVertex2f(X+L,Y); // Top Right 
+        glVertex2f(X+L,Y-B); // Bottom Right
+        glVertex2f(X,Y-B); // Bottom Left
+    glEnd();	
+}
+
+/*void Scaled_Rectangle(float X,float Y,float L,float B,char colour)
+{
     X = (X-X_Scaler)*Length_Scaler;
     Y = (Y-Y_Scaler)*Breadth_Scaler;
     L = L*Length_Scaler;
     B = B*Breadth_Scaler;
-    //cout << X << Y << L << B <<endl;
-    glBegin(GL_QUADS);
-        glVertex2f(X-L/2,Y+B/2); // Top Left
-        glVertex2f(X+L/2,Y+B/2); // Top Right 
-        glVertex2f(X+L/2,Y-B/2); // Bottom Right
-        glVertex2f(X-L/2,Y-B/2); // Bottom Left
-    glEnd();	
-}
+    //Rectangle(X,Y,L,B,colour);
+}*/
 
-void rectangleTL(float X,float Y,float L,float B,char colour)
+void Scaled_RectangleTL(float X,float Y,float L,float B,char colour)
 {
 	// (X,Y) is Top Left Coordinate. L = Length ; B = Breadth The remaining coordinates are (X+L,Y), (X+L,Y-B) (X,Y-B) Center Coordinate is (X+L/2, Y-B/2).
-    rectangle(X+L/2,Y-B/2,L,B,colour);	
+    X = (X-X_Scaler)*Length_Scaler;
+    Y = (Y-Y_Scaler)*(-1*Breadth_Scaler);
+    L = L*Length_Scaler;
+    B = B*Breadth_Scaler;
+    RectangleTL(X,Y,L,B,colour);	
 }
-
 
 /* GLUT callback Handlers */
 static void resize(int width, int height)
@@ -321,14 +354,20 @@ static void resize(int width, int height)
 
 static void LoadCurrentFrame(int Frame)
 {
+    //using namespace std;
     Screen screen = ScreenFrame.at(Frame);
     float length, width, position,t;
     string Signal = "";
     tie(length,width,position,Signal,t) = screen.ScreenInfo();
-    //Loading Road Configuration
-    rectangle(length/2,width/2,length,width,'g'); // Load Road
-    rectangle(position,width/2,1,width,'W');    // Load Signal Line
-    rectangle(position,-1,1,1,Signal[0]); // Load Signal Color
+    //cout << length << width << endl;
+    /*Length_Scaler = 2/length;
+    Breadth_Scaler = -1.5/width;
+    X_Scaler = length/2;
+    Y_Scaler = width/2;*/
+    //Loading Road Configuration    
+    Scaled_RectangleTL(0,0,length,width,'g'); // Load Road
+    Scaled_RectangleTL(position,0,1,width,'W');    // Load Signal Line
+    Scaled_RectangleTL(position,-1,1,1,Signal[0]); // Load Signal Color
     
     vector<Vehicle> Vehicles = screen.Vehicles();
     for (int i = 0; i < Vehicles.size(); i++)
@@ -338,8 +377,12 @@ static void LoadCurrentFrame(int Frame)
             tie(l,b) = curr.getDimensions();
             tie(x,y) = curr.getLocation();
             string Color = curr.getColor();
-            rectangleTL((int)round(x),(int)round(y),l,b,Color[0]); //Load Vehicles
+            Scaled_RectangleTL(round(x),y,0.9*l,0.8*b,Color[0]); //Load Vehicles
         }
+    //using namespace std::chrono_literals; 
+    //std::this_thread::sleep_for(0.1s);
+    usleep(80000);
+    
 }
 
 static void display(void)
@@ -354,15 +397,14 @@ static void display(void)
 static void idle(void)
 {
     glutPostRedisplay();
+    //System::Threading::Thread::Sleep(100);
 }
 
 /* Program entry point */
 int main(int argc, char *argv[])
 {
     Simulation();
-    float Screen_X = 1440;
-    float Screen_Y = 720;
-    float Aspect_Ratio = Screen_X/Screen_Y;
+    //float Aspect_Ratio = Screen_X/Screen_Y;
     glutInit(&argc, argv);
     glutInitWindowSize(Screen_X,Screen_Y);
     glutInitWindowPosition(0,0);
