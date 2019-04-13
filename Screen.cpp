@@ -58,7 +58,7 @@ using namespace std;
     void Screen::Print()
     {
         int length, breadth;
-        double framelength = 1;
+        double framelength = 0.25;
         tie(length,breadth) = size;
         for(double i=0; i < 1; i+=framelength)
         {
@@ -268,11 +268,15 @@ using namespace std;
         tie(x,y) = curr.getLocation();
         tie(l,b) = curr.getDimensions();
         curr.setRoadLeftEnd(false);                            
-        int j = (int)(y);
+        int j = (int)round(y);
         if(j<=0) 
         {
             //cout <<"Left Touch"<<endl;
-            curr.setRoadLeftEnd(true);                            
+            curr.setRoadLeftEnd(true);
+            /*if(b==1 && j==0) 
+            {
+                curr.setRoadLeftEnd(false);
+            } */                           
         }
     }
 
@@ -378,7 +382,7 @@ using namespace std;
     void Screen::RunDisplayFor(int delta_time)
     {
         //TimeJump is the time in future till which we want the Simulation to run.
-        Screen::RunDisplay(CurrentTime+delta_time,0.5);
+        Screen::RunDisplay(CurrentTime+delta_time,0.25);
     }
     
 /*

@@ -377,7 +377,7 @@ static void LoadCurrentFrame(int Frame)
             tie(l,b) = curr.getDimensions();
             tie(x,y) = curr.getLocation();
             string Color = curr.getColor();
-            Scaled_RectangleTL(round(x),y,0.9*l,0.8*b,Color[0]); //Load Vehicles
+            Scaled_RectangleTL(round(x),round(y),0.9*l,0.8*b,Color[0]); //Load Vehicles
         }
     //using namespace std::chrono_literals; 
     //std::this_thread::sleep_for(0.1s);

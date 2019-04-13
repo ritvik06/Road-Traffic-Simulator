@@ -26,6 +26,8 @@ class Vehicle : public Entity
     bool RedLight = false;
     bool RoadLeftEnd = false;
     bool RoadRightEnd = false;
+    int NoSpaceLeft = 0;
+    int NoSpaceRight = 0;
     
     public:
     int RedLightDistance = -1;
@@ -58,5 +60,6 @@ class Vehicle : public Entity
      bool isTurningRight();
      void moveByStep(double t);
      void move(double framelength, double time);
+     void Stop();
 };
 #endif // __VEHICLE_HPP_INCLUDED__ 

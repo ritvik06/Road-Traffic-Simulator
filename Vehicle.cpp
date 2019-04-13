@@ -55,26 +55,39 @@ using namespace std;
      void Vehicle::setRoadLeftEnd(bool roadLeftEnd)
      {
         RoadLeftEnd = roadLeftEnd;
+        if(RoadLeftEnd)
+            NoSpaceLeft++;
      }
      
      void Vehicle::setRoadRightEnd(bool roadRightEnd)
      {
         RoadRightEnd = roadRightEnd;
+        if(RoadRightEnd)
+            NoSpaceRight++;
      }
      
      void Vehicle::setClearAhead(bool clearAhead)
      {
-        ClearAhead = clearAhead;            
+        ClearAhead = clearAhead;
+        /*if(ClearAhead)
+        {
+            NoSpaceLeft = 0;
+            NoSpaceRight = 0;
+        } */           
      }
 
      void Vehicle::setClearLeft(bool clearLeft)
      {
-        ClearLeft = clearLeft;            
+        ClearLeft = clearLeft;    
+        if(!clearLeft)
+            NoSpaceLeft++;        
      }
      
      void Vehicle::setClearRight(bool clearRight)
      {
-        ClearRight = clearRight;            
+        ClearRight = clearRight;  
+        if(!clearRight)
+            NoSpaceRight++;          
      }
      
       string Vehicle::getName()
@@ -154,12 +167,19 @@ using namespace std;
          new_Vx = (RedLight) ? 0 : new_Vx;
          if(!ClearAhead)
          {
-            if(Vehicle::isTurningRight())
+            if(NoSpaceLeft >0 && NoSpaceRight >0)
+            {
+                new_Vy = 0;
+            }
+            else if(Vehicle::isTurningRight())
             {
                 if(ClearRight&&!RoadRightEnd)
                     new_Vy = 1;
                 else 
+                {
                     new_Vy = 0;
+                    //NoSpace++;
+                }
             }
 
             else if(Vehicle::isTurningLeft())
@@ -167,7 +187,10 @@ using namespace std;
                 if(ClearLeft&&!RoadLeftEnd)
                     new_Vy = -1;
                 else 
+                {
                     new_Vy = 0;
+                    //NoSpace++;
+                }
             }
             else
             {
@@ -175,13 +198,18 @@ using namespace std;
                     new_Vy = 1;
                 else if(ClearLeft&&!RoadLeftEnd)
                     new_Vy = -1;
-                else 
+                else
+                {
                     new_Vy = 0;
+                    //NoSpace++;
+                }
             }               
          }
          else
          {
-             new_Vy = 0;
+            new_Vy = 0;
+            NoSpaceLeft = 0;
+            NoSpaceRight = 0;
          }
          Entity::setLocation(make_tuple(x+new_Vx*t,y+new_Vy*t));
          velocity = make_tuple(new_Vx, new_Vy);
@@ -211,4 +239,9 @@ using namespace std;
              Vehicle::moveByStep(framelength);
              N--;
          }
+     }
+
+     void Vehicle::Stop()
+     {
+
      }
