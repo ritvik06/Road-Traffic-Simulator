@@ -1,4 +1,4 @@
-Road_Length 50
-Road_Width 18
-Road_Signal 20
+Road_Length 30
+Road_Width 15
+Road_Signal 15
 Lane_Width 3
