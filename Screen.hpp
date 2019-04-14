@@ -20,12 +20,13 @@ class Screen
     vector<Vehicle> vehicles_on_screen;
     TrafficSignal signal;
     float CurrentTime;
+    int LaneWidth;
     
     public:
     bool InitialPrint = false;
-    Screen(int length, int breadth,int signal_loc);
+    Screen(int length, int breadth,int signal_loc, int lane_width);
     //Screen(Screen &oldScreen);
-    tuple<int,int,int,string,float> ScreenInfo();
+    tuple<int,int,int,int,string,float> ScreenInfo();
     vector<Vehicle> Vehicles();
     void Print();
     void PrintDisplayInfo();
@@ -40,6 +41,8 @@ class Screen
     void Ahead(Vehicle& curr);
     void Left(Vehicle& curr);
     void Right(Vehicle& curr);
+    void LaneLeftEnd(Vehicle& curr);
+    void LaneRightEnd(Vehicle& curr);
     void RoadLeftEnd(Vehicle& curr);
     void RoadRightEnd(Vehicle& curr);
     void RunSimulation(int FutureTime);

@@ -32,21 +32,22 @@ using namespace std;
         screen = vector<vector<char>> (breadth,vector<char>(length,' '));
     }*/
 
-    Screen::Screen(int length, int breadth,int signal_loc)
+    Screen::Screen(int length, int breadth,int signal_loc, int lane_width)
     {
         signal = TrafficSignal(signal_loc);
         size = make_tuple(length, breadth);
         screen = vector<vector<char>> (breadth,vector<char>(length,' '));
         CurrentTime = -1;
+        LaneWidth = lane_width;
     }
 
-    tuple<int,int,int,string,float> Screen::ScreenInfo()
+    tuple<int,int,int,int,string,float> Screen::ScreenInfo()
     {
         int height, width;
         tie(height,width) = size;
         int position = (int)round(signal.getLocation());
         string Signal = signal.getSignal();
-        return make_tuple(height,width,position,Signal,CurrentTime);
+        return make_tuple(height,width,LaneWidth,position,Signal,CurrentTime);
     }
 
     vector<Vehicle> Screen::Vehicles()
@@ -66,7 +67,7 @@ using namespace std;
         }
         for(int j=0;j<length;j++)
         {
-            cout<<"--";
+            cout<<"##";
         }
         cout<<endl;
         for(int i=0; i<breadth;i++)
@@ -76,10 +77,18 @@ using namespace std;
                 cout<<' '<<screen.at(i).at(j);
             }
             cout<<endl;
+            if(i%LaneWidth == (LaneWidth-1) && i!= (breadth-1))
+            {
+                for(int j=0;j<length;j++)
+                {
+                    cout<<"--";
+                }
+                cout<<endl;
+            }
         }
         for(int j=0;j<length;j++)
         {
-            cout<<"--";
+            cout<<"##";
         }
         cout<<endl;
         cout <<"Time Elapsed :- " << CurrentTime << "s      " << "SIGNAL: " << signal.getSignal()<< endl; 
@@ -260,6 +269,37 @@ using namespace std;
         }
     }
    
+    void Screen::LaneLeftEnd(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setLaneLeftEnd(false);                            
+        int j = (int)round(y);
+        if(j%LaneWidth==0 && !curr.getLaneJumper()) 
+        {
+            //cout << curr.getName() << "JumpLeft"<<endl;
+            curr.setLaneLeftEnd(true);                           
+        }
+    }
+
+    void Screen::LaneRightEnd(Vehicle& curr)
+    {
+        int height, width;
+        tie(height,width) = size;
+        double x,y,l,b;
+        tie(x,y) = curr.getLocation();
+        tie(l,b) = curr.getDimensions();
+        curr.setLaneRightEnd(false);                            
+        int j = (int)(y+b);
+        if(j%LaneWidth==LaneWidth-1 && !curr.getLaneJumper()) 
+        {
+            //cout << curr.getName() << "JumpRight"<<endl;
+            curr.setLaneRightEnd(true);                            
+        }
+    }
     void Screen::RoadLeftEnd(Vehicle& curr)
     {
         int height, width;
@@ -325,8 +365,10 @@ using namespace std;
             Screen::Ahead(curr);
             Screen::Left(curr);
             Screen::RoadLeftEnd(curr);
+            Screen::LaneLeftEnd(curr);
             Screen::Right(curr);
             Screen::RoadRightEnd(curr);    
+            Screen::LaneRightEnd(curr);    
             curr.moveByStep(framelength);
             tie(new_x,new_y) = curr.getLocation();
             

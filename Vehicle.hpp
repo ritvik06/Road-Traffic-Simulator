@@ -20,10 +20,13 @@ class Vehicle : public Entity
     tuple<double, double> velocity;
     tuple<double, double> maxVelocity;
     tuple<double, double> acceleration;
+    bool LaneJumper = true;
     bool ClearAhead = true;
     bool ClearLeft = true;
     bool ClearRight = true;
     bool RedLight = false;
+    bool LaneLeftEnd = false;
+    bool LaneRightEnd = false;
     bool RoadLeftEnd = false;
     bool RoadRightEnd = false;
     int NoSpaceLeft = 0;
@@ -34,10 +37,13 @@ class Vehicle : public Entity
     int RoadLeftEndDistance = -1;
     int RoadRightEndDistance = -1;
     Vehicle(string vehicle_type,double length, double breadth, double Vx, double Vy, double Ax, double Ay, double x, double y);
-     void Init(string vehicle_type,double length, double breadth, double Vx, double Vy, double Ax, double Ay, double x, double y);
+     void Init(string vehicle_type,double length, double breadth, double Vx, double Vy, double Ax, double Ay, double x, double y,bool jump);
      tuple<double,double> getVelocity();
      tuple<double,double> getAcceleration();
+     void setLaneJumper(bool jump);
      void setRedLight(bool redLight);
+     void setLaneLeftEnd(bool laneLeftEnd);
+     void setLaneRightEnd(bool laneRightEnd);
      void setRoadLeftEnd(bool roadLeftEnd);
      void setRoadRightEnd(bool roadRightEnd);
      void setClearAhead(bool clearAhead);
@@ -46,6 +52,9 @@ class Vehicle : public Entity
      void setColor(string Color);
      string getName();
      string getColor();
+     bool getLaneJumper();
+     bool getLaneLeftEnd();
+     bool getLaneRightEnd();
      bool getRedLight();
      bool getRoadLeftEnd();
      bool getRoadRightEnd();
@@ -60,6 +69,5 @@ class Vehicle : public Entity
      bool isTurningRight();
      void moveByStep(double t);
      void move(double framelength, double time);
-     void Stop();
 };
 #endif // __VEHICLE_HPP_INCLUDED__ 

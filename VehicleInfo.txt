@@ -1,6 +1,6 @@
 MaxValues 1 1
-Car length 3 width 2 speed 2 acc 1 
-bike length 2 width 1 speed 4 acc 2 
-Bus length 4 width 2 speed 1 acc 0.5 
-Truck length 4 width 3 speed 1 acc 0.5 
-Auto length 2 width 2 speed 1.5 acc 0.5 
+Car length 3 width 2 speed 2 acc 1 F
+bike length 2 width 1 speed 4 acc 2 T
+Bus length 4 width 2 speed 1 acc 0.5 F
+Truck length 4 width 3 speed 1 acc 0.5 F
+Auto length 2 width 2 speed 1.5 acc 0.5 T

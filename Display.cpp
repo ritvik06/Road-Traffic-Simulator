@@ -53,14 +53,15 @@ void Simulation()
     vehicle_file.open(Vehicle.c_str());
     simulation_file.open(Simulation.c_str());
 
-    float length = 0,width = 0,signal_loc = 0;
+    float length = 0,width = 0,signal_loc = 0,lane_width = 0;
     int SimulationID = 0;
     double max_vel = 0,max_acc = 0; 
     string vehicle_name = "";
+    bool jump = false;
     double Y_coordinate = 0, X_coordinate = 0, vehicle_length = 0,vehicle_width = 0,vehicle_vel = 0,vehicle_acc = 0;
     //int TimeIndex = 0;    
     
-    Screen screen(0,0,0);
+    Screen screen(0,0,0,0);
     string line = "";
   
     while(road_file >> word)
@@ -81,6 +82,12 @@ void Simulation()
         {
             road_file >> word;
             signal_loc = stod(word);
+        }
+
+        if(word=="Lane_Width")
+        {
+            road_file >> word;
+            lane_width = stod(word);
         }
     }
 
@@ -111,36 +118,46 @@ void Simulation()
             vehicle_width = stod(result[4]);
             vehicle_vel = stod(result[6]);
             vehicle_acc = stod(result[8]);
+            if(result[9] == "T") 
+                jump = true;
+            else 
+                jump = false;
+
         
             if(vehicle_name=="Car")
             {
                 X_coordinate = -1*vehicle_length;
                 Y_coordinate = rand() % (int)(width-vehicle_width+1);
-                car.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
+                car.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate,jump);
+                //cout << jump << vehicle_name<<endl;
             }
             else if(vehicle_name=="bike")
             {
                 X_coordinate = -1*vehicle_length;
                 Y_coordinate = rand() % (int)(width-vehicle_width+1);
-                bike.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
+                bike.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate,jump);
+                //cout << jump << vehicle_name<<endl;
             }
             else if(vehicle_name=="Truck")
             {
                 X_coordinate = -1*vehicle_length;
                 Y_coordinate = rand() % (int)(width-vehicle_width+1);
-                truck.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
+                truck.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate,jump);
+                //cout << jump << vehicle_name<<endl;
             }
             else if(vehicle_name=="Bus")
             {
                 X_coordinate = -1*vehicle_length;
                 Y_coordinate = rand() % (int)(width-vehicle_width+1);
-                bus.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
+                bus.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate,jump);
+                //cout << jump << vehicle_name<<endl;
             }
             else if(vehicle_name=="Auto")
             {
                 X_coordinate = -1*vehicle_length;
                 Y_coordinate = rand() % (int)(width-vehicle_width+1);
-                autorickshaw.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate);
+                autorickshaw.Init(vehicle_name,vehicle_length,vehicle_width,vehicle_vel,0,vehicle_acc,0,X_coordinate,Y_coordinate,jump);
+                //cout << jump << vehicle_name<<endl;
             }
         }
     }        
@@ -163,7 +180,7 @@ void Simulation()
         else if(result[0]=="START")
         {
             cout <<"Starting Simulation #"<< SimulationID <<endl; 
-            screen = Screen(length,width,signal_loc);              
+            screen = Screen(length,width,signal_loc,lane_width);              
         
         }
         else if(result[0]=="Signal")
@@ -181,8 +198,10 @@ void Simulation()
            color = result[1]; 
            car.setColor(color);
            double l=0,b=0;
-           tie(l,b) = car.dimensions;
-           car.setCoordinates(-1*l,rand() % (int)(width-b+1));
+           tie(l,b) = bike.dimensions;
+           double x = -1*l;
+           double y = (rand() % (int)(width/lane_width))*lane_width;
+           car.setCoordinates(x,y);
            screen.addVehicle(car);
            cout <<"A " << color <<" car is added."<<endl; 
            screen.RunFor(1);
@@ -196,7 +215,9 @@ void Simulation()
            bike.setColor(color);
            double l=0,b=0;
            tie(l,b) = bike.dimensions;
-           bike.setCoordinates(-1*l,rand() % (int)(width-b+1));
+           double x = -1*l;
+           double y = (rand() % (int)(width/lane_width))*lane_width;
+           bike.setCoordinates(x,y);
            screen.addVehicle(bike);
            cout <<"A " << color <<" bike is added."<<endl; 
            screen.RunFor(1);
@@ -209,8 +230,10 @@ void Simulation()
            color = result[1]; 
            bus.setColor(color);
            double l=0,b=0;
-           tie(l,b) = bus.dimensions;
-           bus.setCoordinates(-1*l,rand() % (int)(width-b+1));
+           tie(l,b) = bike.dimensions;
+           double x = -1*l;
+           double y = (rand() % (int)(width/lane_width))*lane_width;
+           bus.setCoordinates(x,y);
            screen.addVehicle(bus);
            cout <<"A " << color <<" bus is added."<<endl; 
            screen.RunFor(1);
@@ -223,8 +246,10 @@ void Simulation()
            color = result[1]; 
            truck.setColor(color);
            double l=0,b=0;
-           tie(l,b) = truck.dimensions;
-           truck.setCoordinates(-1*l,rand() % (int)(width-b+1));
+           tie(l,b) = bike.dimensions;
+           double x = -1*l;
+           double y = (rand() % (int)(width/lane_width))*lane_width;
+           truck.setCoordinates(x,y);
            screen.addVehicle(truck);
            cout <<"A " << color <<" truck is added."<<endl;
            screen.RunFor(1);
@@ -237,8 +262,10 @@ void Simulation()
            color = result[1]; 
            autorickshaw.setColor(color);
            double l=0,b=0;
-           tie(l,b) = autorickshaw.dimensions;
-           autorickshaw.setCoordinates(-1*l,rand() % (int)(width-b+1));
+           tie(l,b) = bike.dimensions;
+           double x = -1*l;
+           double y = (rand() % (int)(width/lane_width))*lane_width;
+           autorickshaw.setCoordinates(x,y);
            screen.addVehicle(autorickshaw);
            cout <<"A " << color <<" auto-rickshaw is added."<<endl; 
            screen.RunFor(1);
@@ -283,36 +310,12 @@ void Scaled_Circle(float X,float Y,float R,char colour)
     
     switch(colour)
     {
-        case 'l': glColor3f(0.0,0.25,0.0); //Dark Lime
-        break;
         case 'L': glColor3f(0.0,1.0,0.0); //Lime
         break;
         case 'R': glColor3f(1.0,0.0,0.0); //Red
         break;
-        case 'r': glColor3f(0.25,0.0,0.0); //Dark Red
-        break;
-        case 'B': glColor3f(0.0,0.0,1.0); //Blue
-        break;
-        case 'W': glColor3f(1.0,1.0,1.0); //White
-        break;
-        case 'Y': glColor3f(1.0,1.0,0.0); //Yellow
-        break;
-        case 'M': glColor3f(1.0,0.0,1.0); //Magenta
-        break;
-        case 'P': glColor3f(1.0,0.0,0.5); //Pink
-        break;
-        case 'g': glColor3f(0.15,0.15,0.15); //grey
-        break;
-        case 'G': glColor3f(0.5,1.0,0.0); //Green
-        break;
-        case 'C': glColor3f(1.0,0.2,0.2); //Crimson
-        break;
-        case 'S': glColor3f(0.75,0.7,0.5); //Sand
-        break;
-        case ' ': glColor3f(0.0,0.0,0.0); //Black
-        break;
         
-        default: glColor3f(0.0,1.0,1.0); //Aqua
+        default: glColor3f(0.0,0.0,0.0); //Black
 	}
     
     glBegin(GL_TRIANGLE_FAN);
@@ -419,20 +422,18 @@ static void LoadCurrentFrame(int Frame)
 {
     //using namespace std;
     Screen screen = ScreenFrame.at(Frame);
-    float length, width, position,t;
+    float length, width, position,lane_width,t;
     string Signal = "";
-    tie(length,width,position,Signal,t) = screen.ScreenInfo();
-    //cout << length << width << endl;
-    /*Length_Scaler = 2/length;
-    Breadth_Scaler = -1.5/width;
-    X_Scaler = length/2;
-    Y_Scaler = width/2;*/
+    tie(length,width,lane_width,position,Signal,t) = screen.ScreenInfo();
     //Loading Road Configuration    
     RectangleTL(-1,1,2,2,'S'); // Load Background
     Scaled_RectangleTL(0,0,length,width,'g'); // Load Road
     Scaled_RectangleTL(position,0,1,width,'W');    // Load Signal Line
     Scaled_RectangleTL(position-0.5,-1,2,1,'Y'); // Load Signal Box 
-        
+    for(int i = lane_width-1 ; i < width-1 ; i+= lane_width)
+    {
+        Scaled_RectangleTL(0,i+0.75,length,0.15,'W');    // Load Signal Lanes
+    }    
     if(Signal[0] == 'R')
     {
         Scaled_Circle(position,-0.5,0.45,' '); // Load Signal GREEN Color

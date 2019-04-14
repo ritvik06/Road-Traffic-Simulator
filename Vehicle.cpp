@@ -16,7 +16,7 @@ using namespace std;
         acceleration = make_tuple(Ax,Ay);
     }
 
-    void Vehicle::Init(string vehicle_type,double length, double breadth, double VX, double VY, double Ax, double Ay, double x, double y)
+    void Vehicle::Init(string vehicle_type,double length, double breadth, double VX, double VY, double Ax, double Ay, double x, double y, bool jump)
     {   
         Entity::dimensions = make_tuple(length,breadth);
         vehicle = vehicle_type;
@@ -25,6 +25,7 @@ using namespace std;
         acceleration = make_tuple(Ax,Ay);
         Entity::setLocation(make_tuple(x,y));
         Entity::symbol = vehicle_type[0];
+        LaneJumper = jump;
     }
     
     tuple<double,double> Vehicle::getVelocity()
@@ -65,6 +66,22 @@ using namespace std;
         if(RoadRightEnd)
             NoSpaceRight++;
      }
+
+     void Vehicle::setLaneLeftEnd(bool laneLeftEnd)
+     {
+        if(!LaneJumper)
+            LaneLeftEnd = laneLeftEnd;
+        if(LaneLeftEnd)
+            NoSpaceLeft++;
+     }
+     
+     void Vehicle::setLaneRightEnd(bool laneRightEnd)
+     {
+        if(!LaneJumper)
+            LaneRightEnd = laneRightEnd;
+        if(LaneRightEnd)
+            NoSpaceRight++;
+     }
      
      void Vehicle::setClearAhead(bool clearAhead)
      {
@@ -103,6 +120,16 @@ using namespace std;
       bool Vehicle::getRedLight()
      {
         return RedLight;            
+     }
+
+     bool Vehicle::getLaneLeftEnd()
+     {
+         return LaneLeftEnd;
+     }
+
+     bool Vehicle::getLaneRightEnd()
+     {
+         return LaneRightEnd;
      }
 
      bool Vehicle::getRoadLeftEnd()
@@ -173,7 +200,7 @@ using namespace std;
             }
             else if(Vehicle::isTurningRight())
             {
-                if(ClearRight&&!RoadRightEnd)
+                if(ClearRight&&!RoadRightEnd &&!LaneRightEnd)
                     new_Vy = 1;
                 else 
                 {
@@ -184,7 +211,7 @@ using namespace std;
 
             else if(Vehicle::isTurningLeft())
             {
-                if(ClearLeft&&!RoadLeftEnd)
+                if(ClearLeft&&!RoadLeftEnd &&!LaneLeftEnd)
                     new_Vy = -1;
                 else 
                 {
@@ -194,9 +221,9 @@ using namespace std;
             }
             else
             {
-                if(ClearRight&&!RoadRightEnd)
+                if(ClearRight&&!RoadRightEnd && !LaneRightEnd)
                     new_Vy = 1;
-                else if(ClearLeft&&!RoadLeftEnd)
+                else if(ClearLeft&&!RoadLeftEnd && !LaneLeftEnd)
                     new_Vy = -1;
                 else
                 {
@@ -241,7 +268,12 @@ using namespace std;
          }
      }
 
-     void Vehicle::Stop()
+     void Vehicle::setLaneJumper(bool jump)
      {
+         LaneJumper = jump;
+     }
 
+     bool Vehicle::getLaneJumper()
+     {
+         return LaneJumper;
      }
